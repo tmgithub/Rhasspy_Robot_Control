@@ -1,94 +1,42 @@
 # Rhasspy_Robot_Control
 
 ## Inhalt
-auf dem Tisch zum Testen
-<p align="center"><img src="Bilder/IMG_4788.jpg" width="250"</p><br /><br />
-Am Platz und in Betrieb
-<p align="center"><img src="Bilder/IMG_5001.jpg" width="250"</p>
+
+
 
 * [Allgemeines](#Allgemeines)
 * [Technik](#Technik)
 * [Hardware](#Hardware)
 * [Setup](#Setup)
-* [Bluetooth Setup](#BluetoothSetup)
-* [Routing, wichtig für MQtt zugriffe aus anderen Subnetzen](#Routing)
 * [MQtt](#MQtt)
 * [Repository](#Repository)
 * [Programmablauf](#Programmablauf)
-* [Demo Pushover](#Demo Pushover)
 
 ## Allgemeines <a name="Allgemeines"></a>
-Das Projekt dient der Alarmierung bei einer Havarie (z.B. Stromausfall) .
+Das Projekt soll nach erkannter Sprache Servomotoren ansteuern die einem Roboter gehören  .
 
 ## Software
 * Raspberryos (opensource)
 >```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-11-08/2021-10-30-raspios-bullseye-armhf-lite.zip```
-* pilight (opensource)
+* rhasspy ( offline Spracherkennungsprogramm)
 
 ## Client Software
-* pushover client <br />
-> erhältlich im App Store (ca. 5,00 Euro) 
-><p align="left"><img src="Bilder/IMG_4784.jpg" width="150"></p>
-
-oder im  
-
-> Playstore
+* mqtt explorer <br />
 
 	
 ## Technik <a name="Technik"></a>
 Hardware gekauft:
-* Raspberry Pi 3 b+ Kurzform RPi
+* Raspberry Pi 4 4 GByte RAM Kurzform RPi
 
 <p align="center"><img src="Bilder/rpi3.jpg" width="150"</p>
 
-* Huawei USB-Stick LTE
-
-<p align="center"><img src="Bilder/Huawei-E3272.jpg" width="150"</p>
-
-* 4G-LTE-Antenne
 
 <p align="center"><img src="Bilder/4G-Antenne.jpg" width="150"</p>
 
-* INA219 I2C Strommesseinheit
-
-<p align="left"><img src="Bilder/IMG_4783.jpg" width="100"></p><br />
-
-* Thermometer BLE WS08 Brifit kompatibel
-
-<p align="left"><img src="Bilder/Thermometer_oben.jpg" width="100"></p><br />
 
 
-* Netzteil 9V DC 3A
-* Bateriehalter 5 x 1,5 Babyzellen
-* Gehäuse
-* SD-Card
-
-<p align="left"><img src="Bilder/IMG_4785.jpg" width="100"></p><br />
-
-* RX6B 433MHz Funkempfänger
-
-<p align="left"><img src="Bilder/IMG_4786.jpg" width="150"></p><br />
 
 ## Hardware <a name="Hardware"></a>
-Hardware nicht käuflich:
-
-
-<p align="left"><img src="Bilder/IMG_4764.jpg" width="150"></p><br />
-
-<p align="left"><img src="Bilder/IMG_4778.jpg" width="150"></p><br />
-
-Schaltplan : <p align="center"><img src="Bilder/IMG_4782.jpg" width="250"></p><br />
-
-Lochplatine : <p align="center"><img src="Bilder/IMG_4779.jpg" width="150"></p>
-<p align="center"><img src="Bilder/IMG_4780.jpg" width="150"></p><br />
-Netzanschluss Thermometer : <p align="center"><img src="Bilder/IMG_4897.jpg" width="150"></p><br />
-<p align="center"><img src="Bilder/IMG_4898.jpg" width="150"></p>
-<p align="center"><img src="Bilder/IMG_4899.jpg" width="150"></p><br />
-Loch durch die Wand für die LTE-Antenne:<br />
-<p align="left"><img src="Bilder/IMG_4984.mp4" width="150"></p>
-
-* Netzanschluss Thermometer 3D-Druckdateien : <br />
-> Hilfsdateien/Batterie1.stl und Hilfsdateien/lid1.stl<br />
 	
 ## Setup <a name="Setup"></a>
 Einrichtung des Alarm Pi:
@@ -307,10 +255,7 @@ das ganze passiert in der Funktion
 
 Welche in der Datei ```pialarm_functions_library.py``` definiert ist
 
-## Demo Pushover <a name="Demo Pushover"></a>
-><p align="left"><img src="Bilder/Pushoveralarm_Iphone.mp4" width="150"></p>
-><p align="left"><img src="Bilder/Pialarm2.mp4" width="150"></p>
-><p align="left"><img src="Bilder/Demo_Stromausfall_Pialarm.mp4" width="150"></p>
+
 
 
 
