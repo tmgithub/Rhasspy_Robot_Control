@@ -1,0 +1,33 @@
+Connected at  2022-06-01 11:40:06.753002
+json_data:  {'text': "'Hallo Ihr Nasen'", 'siteId': 'default', 'lang': 'it_IT', 'id': None, 'sessionId': None}
+MSG:  hermes/tts/say
+satz:  'Hallo Ihr Nasen'
+hermes_sprachausgabe.py sprachausgabe():  'Hallo Ihr Nasen'
+json_data:  {'text': "'Hallo Ihr Nasen.Mein name ist Kai und ich bin dabei'", 'siteId': 'default', 'lang': 'it_IT', 'id': None, 'sessionId': None}
+MSG:  hermes/tts/say
+satz:  'Hallo Ihr Nasen.Mein name ist Kai und ich bin dabei'
+hermes_sprachausgabe.py sprachausgabe():  'Hallo Ihr Nasen.Mein name ist Kai und ich bin dabei'
+json_data:  {'text': 'Blah Blah', 'siteId': 'default', 'id': None, 'sessionId': None}
+MSG:  hermes/tts/say
+satz:  Blah Blah
+hermes_sprachausgabe.py sprachausgabe():  Blah Blah
+json_data:  {'text': '+text+', 'siteId': 'default', 'id': None, 'sessionId': None}
+MSG:  hermes/tts/say
+satz:  +text+
+hermes_sprachausgabe.py sprachausgabe():  +text+
+json_data:  {'text': "'Hallo Ihr Nasen.Mein name ist Kai und ich bin dabei'", 'siteId': 'default', 'lang': 'it_IT', 'id': None, 'sessionId': None}
+MSG:  hermes/tts/say
+satz:  'Hallo Ihr Nasen.Mein name ist Kai und ich bin dabei'
+hermes_sprachausgabe.py sprachausgabe():  'Hallo Ihr Nasen.Mein name ist Kai und ich bin dabei'
+json_data:  {'text': 'Spracherkennung eingeschaltet', 'siteId': 'default', 'id': None, 'sessionId': None}
+MSG:  hermes/tts/say
+satz:  Spracherkennung eingeschaltet
+hermes_sprachausgabe.py sprachausgabe():  Spracherkennung eingeschaltet
+Traceback (most recent call last):
+  File "hermes_sprachausgabe.py", line 61, in <module>
+    mqtt.loop_forever()
+  File "/usr/local/lib/python3.7/dist-packages/paho/mqtt/client.py", line 1782, in loop_forever
+    rc = self.loop(timeout, max_packets)
+  File "/usr/local/lib/python3.7/dist-packages/paho/mqtt/client.py", line 1163, in loop
+    socklist = select.select(rlist, wlist, [], timeout)
+KeyboardInterrupt

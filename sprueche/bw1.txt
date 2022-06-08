@@ -1,0 +1,1 @@
+# kennst Du die Drei Gesetze der Robotik ? Ein Roboter darf keinen Menschen verletzen oder durch Untätigkeit zu Schaden kommen lassen. Ein Roboter muss den Befehlen eines Menschen gehorchen, es sei denn, solche Befehle stehen im Widerspruch zum ersten Gesetz. Ein Roboter muss seine eigene Existenz schützen, solange dieser Schutz nicht dem Ersten oder Zweiten Gesetz widerspricht.

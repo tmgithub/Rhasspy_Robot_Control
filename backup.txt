@@ -1,0 +1,10 @@
+/root/.config/rhasspy/profiles/de/intent_graph.pickle.gz
+/root/.config/rhasspy/profiles/de/intents
+/root/.config/rhasspy/profiles/de/kaldi_custom_words.txt
+/root/.config/rhasspy/profiles/de/kaldi_unknown_words.txt
+/root/.config/rhasspy/profiles/de/profile.json
+/root/.config/rhasspy/profiles/de/raven
+/root/.config/rhasspy/profiles/de/sentences.ini
+/root/.config/rhasspy/profiles/de/slots
+/root/.config/rhasspy/profiles/de/supervisord.conf
+/usr/local/intent
