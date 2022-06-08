@@ -28,11 +28,6 @@ Das Projekt soll nach erkannter Sprache Servomotoren ansteuern die einem Roboter
 Hardware gekauft:
 * Raspberry Pi 4 4 GByte RAM Kurzform RPi
 
-<p align="center"><img src="Bilder/rpi3.jpg" width="150"</p>
-
-
-<p align="center"><img src="Bilder/4G-Antenne.jpg" width="150"</p>
-
 
 
 
@@ -54,16 +49,16 @@ Als root User das Passwort des Users Pi mit ```passwd pi``` ebenfalls anpassen
 
 
 **2.**  Einrichtung mit **raspi-config**. <br />
-<p align="center"><img src="Bilder/raspi-config.jpg" width="150"></p><br />
+<p align="center"><img src="Bilder/raspi-config1.jpeg" width="150"></p><br />
 
 > Als root User mit dem Kommandozeilen-Tool ```raspi-config``` wird unter dem Menüpunkt **3 Interface Options**<br />
 **P2 SSH** und **P5 I2C** aktiviert.<br />
 
-<p align="center"><img src="Bilder/raspi-config_ssh.jpg" width="150"></p><br />
+<p align="center"><img src="Bilder/raspi-config_ssh.jpeg" width="150"></p><br />
 
 > Desweiteren können die localisations Options unter Punkt 5 gesetzt werden  L1 Locale und L2 Timezone und L3 Keyboard .<br />
 
-<p align="center"><img src="Bilder/raspi-config_hostname.jpg" width="150"></p><br />
+<p align="center"><img src="Bilder/raspi-config_hostname.jpeg" width="150"></p><br />
 
 > Der hostname wird mit dem tool auf pialarm gesetzt. <br />
 > Die Konfigdatei für ssh wird mit ```vi /etc/ssh/sshd_config``` angepasst.<br />
@@ -72,12 +67,8 @@ Der Wert ```PermitRootLogin``` wird auf yes gesetzt.<br />
 
 **3.**  Dann wird der RPi neu gestartet ( reboot oder init6 auf der Kommandozeile)
 
-**4.**  Nach erfolgreicher Anmeldung per ``` ssh -lroot 10.1.1.19``` wird ein Repository für die Funksoftware hinzugefügt <br />
-> ```echo "deb http://apt.pilight.org/ stable main" > /etc/apt/sources.list.d/pilight.list```<br />
+**4.**  Nach erfolgreicher Anmeldung per ``` ssh -lroot 192.168.XX.XX```  <br />
 
-und der passende Key <br />
-
->``` wget -O - http://apt.pilight.org/pilight.key | apt-key add - ```<br />
 
 
 **5.** Dann wird ebenfalls auf der Kommandozeile mit ```apt update``` der Repository Cache aktualisiert und folgende Programme werden installiert: <br />
@@ -175,34 +166,6 @@ und <br />
 >>WantedBy=multi-user.target<br />
 
 
-## Bluetooth Setup <a name="BluetoothSetup"></a>
-
-**1.** Paaren der <b>bluetooth</b> Einheiten <br />
->```ssh -lroot 10.1.1.19``` <br />
-> per ssh auf das System einloggen. <br />
-> Das Kommando ```bluetoothctl``` eingeben.<br />
-> Mit ```scan on``` das scannen starten .<br />
-><br />
-> ```[NEW] Device 8E:69:00:00:04:D0 ThermoBeacon```<br />
-><br />
-> Mit ```pair 8E:69:00:00:04:D0``` und dem Knopfdruck am <b>Bluetooth-Gerät</b> das Paaren starten.<br />
-> Dann sollte soetwas ausgegeben werden : <br />
-><br />
-> ```Attempting to pair with 8E:69:00:00:04:D0```<br />
-> ```[CHG] Device 8E:69:00:00:04:D0 Connected: yes```<br />
-><br />
-> Die gefundenen ```BLE-MAC-Adressen``` in die Datei ```/usr/local/pialarm/sensoren.py`` in dem Format <br />
-> <b>SENSORS = {"8e:bb:00:00:02:c6 ": "Serverraum", "8e:69:00:00:04:d0" : "Buero"}</b><br />
-> eingeben.<br />
-><br />
-## Routing wichtig für MQtt zugriffe aus anderen Subnetzen <a name="Routing">
-> 
-## MQtt Nutzung <a name="MQtt"></a>
-
-**1.** Es können sich die VM's / Sever per MQtt client mit dem Dienst auf 10.1.1.19 port 1883 verbinden <br />
-><br />
-><br />
-
 ## Repository <a name="Repository"></a>
 
 Repository akualisieren :<br />
@@ -225,35 +188,9 @@ Programmablauf :
 
 gestartet.
 
-Die Ausgabe des Programms in der Konsole ist zur Zeit:
 
->Initial <br />
->keinstrom: 0 stromalarm_ausgeloest : 0 <br />
->Alarm : Kein Strom <br />
->Im IF keinstrom: 1 stromalarm_ausgeloest : 0 <br />
->Alarm : Kein Strom <br />
->Im IF keinstrom: 2 stromalarm_ausgeloest : 0 <br />
->Pushover Stromalarm ausloesen: <br />
 
 Check der Interfaces hinzugefügt 
-
->Initial <br />
->keinstrom: 0 stromalarm_ausgeloest : 0 <br />
->10.1.1.1 is down! via Interface eth0 <br />
->www.heise.de is down! via Interface eth0 <br />
->www.heise.de is up! via Interface wlan0 <br />
->192.168.98.1 is up! via Interface wlan0 <br />
->10.1.1.1 is down! via Interface eth0 <br />
-
-
-Bei Alarm wird folgende URL aufgerufen: <br />
-
-```url = "https://api.pushover.net/1/messages.json"```
-
-das ganze passiert in der Funktion 
-```def pushoveralarm(prio, werte, meldetext):```
-
-Welche in der Datei ```pialarm_functions_library.py``` definiert ist
 
 
 
