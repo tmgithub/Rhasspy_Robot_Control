@@ -1,0 +1,31 @@
+(Stinkefinger{GL_SUBKT:Mittelfinger}){GL_KT:Arm}
+(Zeigefinger{GL_SUBKT:Zeigefinger}){GL_KT:Arm}
+Fuss{GL_KT}
+Kopf{GL_KT}
+(Faust{GL_SUBKT:Faust}){GL_KT:Arm}
+(Augen{GL_SUBKT:Augen}){GL_KT:Kopf}
+(Hackfresse:Mund{GL_SUBKT:Mund}){GL_KT:Kopf}
+Arm{GL_KT}
+(Ringfinger{GL_SUBKT:Ringfinger}){GL_KT:Arm}
+(Daumen{GL_SUBKT:Daumen}){GL_KT:Arm}
+Rumpf{GL_KT}
+(Maul:Mund{GL_SUBKT:Mund}){GL_KT:Kopf}
+Futterluke:Mund{GL_KT}
+(Hände{GL_SUBKT:Hände}){GL_KT:Arm}
+(Fäuste{GL_SUBKT:Fäuste}){GL_KT:Arm}
+Füsse{GL_KT}
+(Mittelfinger{GL_SUBKT:Mittelfinger}){GL_KT:Arm}
+Beine{GL_KT}
+(Hand{GL_SUBKT:Hand}){GL_KT:Arm}
+(pinky{GL_SUBKT:kleinen Finger}){GL_KT:arm}
+(Klappe:Mund{GL_SUBKT:Mund}){GL_KT:Kopf}
+Omme:Kopf{GL_KT:Kopf}
+Schädel:Kopf
+Oberkörper:Rumpf{GL_KT}
+(kleinen Finger{GL_SUBKT:kleinen Finger}){GL_KT:arm}
+(Finger{GL_FINGER:Finger}){GL_KT:arm}
+Bein{GL_KT}
+(Mund{GL_SUBKT:Mund}){GL_KT:Kopf}
+Arme{GL_KT}
+Füße{GL_KT}
+(Auge{GL_SUBKT:Auge}){GL_KT:Kopf}
