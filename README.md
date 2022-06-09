@@ -57,7 +57,7 @@ Set up the  Raspberry Pi's 4 for the offline voice recognition:
 > After the login prompt is blinking on the monitor, login with the user ```pi```and the password ```raspberry```<br />
 > Be careful the keyboard layout is english **z** instead of **y**. <br />
 > Give the command  ```sudo passwd``` so the password for the user root can be set <br />
-> Change with ```su -``` and the new password to the root user. <br />
+> Execute ```su -``` and the new password to the root user. <br />
 > Now change the passord for the user **pi** with ```passwd pi```.
 
 **2.**  Set-up with the command **raspi-config** . <br />
@@ -183,7 +183,7 @@ Program Sequence :
 >```cd /usr/local/intent/ python3 reaktion.py```<br />
 ><br />
 > **after loading the libraries** the main program start a subprocess<br />
-> to speak word:<br />
+> a receiver for mqtt:<br />
 > >subprocess.Popen(['/usr/bin/python3','/usr/local/intent/hermes_sprachausgabe.py'])<br />
 >> time.sleep(4)<br />
 >> globs.initialize() ### Globale Variablen initialisieren<br />
