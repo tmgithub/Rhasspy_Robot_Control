@@ -39,13 +39,18 @@ Hardware to buy:
 <p align="left"><img src="Bilder/pcf.jpg" width="250"></p><br />
 * Real Time Clock RTC DS3231 I2C
 <p align="left"><img src="Bilder/ds3231.jpg" width="250"></p><br />
-* Case with enough space for the HAT
+* Case with enough space for the HAT<br />
+<br />
 <p align="left"><img src="Bilder/RPI4_CASE_SECURE_01.png" width="250"></p><br />
 <br />
+<br />
 * **this is my case**<br />
+* <br />
 * and the selfmade case for the respeaker microphone extension.<br />
 * you can see the **i2c extender** and the **DS3231** plugged into the **i2c extender**<br />
-<img src="Bilder/my_case.jpg" width="250"><br />
+ <br />
+<p align="left"><img src="Bilder/my_case.jpg" width="250"></p><br />
+<br />
 
 	
 ## Setup <a name="Setup"></a>
@@ -197,6 +202,19 @@ Program Sequence :
 >> time.sleep(4)<br />
 >> globs.initialize() ### Globale Variablen initialisieren<br />
 >> MY.sound_initialize()<br />
+>>> **The function on_connect() subscribes to the mqtt**<br />
+>>> <br />
+>>> def on_connect(client, userdata, flags, rc): ## Mit dem mosquitto verbinden und intent und hotword subscriben<br />
+>>>     print('reaktion.py Connected at ',datetime.now())<br />
+>>>     mqtt.subscribe('hermes/intent/#')<br />
+>>>     mqtt.subscribe('hermes/hotword/#')<br />
+>>     <br />
+>> **at the end of the code**<br />
+>> mqtt = mqtt.Client()<br /> 
+>> mqtt.on_connect = on_connect<br />
+>> mqtt.on_message = on_message<br />
+>> mqtt.connect('localhost', 1883)<br />
+>> mqtt.loop_forever()<br />
 
 
 
