@@ -57,16 +57,16 @@ Dann mit su - (**Achtung Tastatur - ist beim ß**) und dem neuen Passwort zum ro
 Als root User das Passwort des Users Pi mit ```passwd pi``` ebenfalls anpassen
 
 **2.**  Einrichtung mit **raspi-config**. <br />
-<p align="center"><img src="Bilder/raspi-config1.jpeg" width="150"></p><br />
+<p align="left"><img src="Bilder/raspi-config1.jpeg" width="150"></p><br />
 
 > Als root User mit dem Kommandozeilen-Tool ```raspi-config``` wird unter dem Menüpunkt **3 Interface Options**<br />
 **P2 SSH** und **P5 I2C** aktiviert.<br />
 
-<p align="center"><img src="Bilder/raspi-config_ssh.jpeg" width="150"></p><br />
+<p align="left"><img src="Bilder/raspi-config_ssh.jpeg" width="150"></p><br />
 
 > Desweiteren können die localisations Options unter Punkt 5 gesetzt werden  L1 Locale und L2 Timezone und L3 Keyboard .<br />
 
-<p align="center"><img src="Bilder/raspi-config_hostname.jpeg" width="150"></p><br />
+<p align="left"><img src="Bilder/raspi-config_hostname.jpeg" width="150"></p><br />
 
 > Der hostname wird mit dem tool auf pialarm gesetzt. <br />
 > Die Konfigdatei für ssh wird mit ```vi /etc/ssh/sshd_config``` angepasst.<br />
