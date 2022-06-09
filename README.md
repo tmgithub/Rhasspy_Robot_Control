@@ -126,22 +126,32 @@ cd into the new folder <br />
 >>```then the virual env is started``` <br />
 >>[Install]<br />
 >>WantedBy=multi-user.target<br />
->>
-**7.** config Rhasspy
-> listening to mqtt
-<p align="left"><img src="Bilder/Rhasspy_MQTT.png" width="150"></p><br />
-> i use pyaudio for recording the voice
-<p align="left"><img src="Bilder/Rhasspy_audio_recording.png" width="150"></p><br />
-> my roboter is named kai, i use the wakeword engine **Rhasspy Raven**
-<p align="left"><img src="Bilder/Rhasspy_wake_word.png" width="150"></p><br />
-> speech to text via kaldi
-<p align="left"><img src="Bilder/Rhasspy_speech_to_text.png" width="150"></p><br />
-> intent recognition via Fsticuffs
-<p align="left"><img src="Bilder/Rhasspy_intent_recognition.png" width="150"></p><br />
-> all words were send to mqtt so other programs can listen to them
-<p align="left"><img src="Bilder/Rhasspy_text_to_Speech.png" width="150"></p><br />
-> the sound is played by aplay ( for example error sound etc.)
-<p align="left"><img src="Bilder/rhasspy_audio_play.png" width="150"></p><br />
+
+
+**7.** config Rhasspy <br />
+
+> listening to mqtt <br />
+> <p align="left"><img src="Bilder/Rhasspy_MQTT.png" width="150"></p><br />
+> <br />
+> i use pyaudio for recording the voice<br /><br />
+> <p align="left"><img src="Bilder/Rhasspy_audio_recording.png" width="150"></p><br />
+> <br />
+> my roboter is named kai, i use the wakeword engine **Rhasspy Raven**<br />
+> <p align="left"><img src="Bilder/Rhasspy_wake_word.png" width="150"></p><br />
+> <br />
+> speech to text via kaldi <br />
+> <p align="left"><img src="Bilder/Rhasspy_speech_to_text.png" width="150"></p><br />
+> <br />
+> intent recognition via Fsticuffs <br />
+> <p align="left"><img src="Bilder/Rhasspy_intent_recognition.png" width="150"></p><br />
+> <br />
+> all words were send to mqtt so other programs can listen to them <br />
+> <p align="left"><img src="Bilder/Rhasspy_text_to_Speech.png" width="150"></p><br />
+> <br />
+> the sound is played by aplay ( for example error sound etc.) <br />
+> <p align="left"><img src="Bilder/rhasspy_audio_play.png" width="150"></p><br />
+
+
 
 
 
