@@ -20,28 +20,30 @@ for example the left arm ( it will be realized by a Raspberry pi Zero)
 * Raspberryos (opensource)
 >```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-lite.img.xz```
 * rhasspy ( offline Spracherkennungsprogramm)
-* eclipse ide
-<p align="left"><img src="Bilder/ds3231.jpg" width="150"></p><br />
+>* eclipse ide
+>> this is the place i am working with<br />
+>> <br />
+>> <p align="left"><img src="Bilder/eclipse.png" width="400"></p><br />
 ** Client Software**
 * mqtt explorer <br />
 
 ## Hardware <a name="Hardware"></a>
 Hardware to buy:
 * Raspberry Pi 4 4 GByte RAM short RPi
-<p align="left"><img src="Bilder/rpi4.jpg" width="150"></p><br />
+<p align="left"><img src="Bilder/rpi4.jpg" width="250"></p><br />
 * ReSpeaker 6 Mic Array for Raspberry Pi
-<p align="left"><img src="Bilder/respeaker.jpg" width="150"></p><br />
+<p align="left"><img src="Bilder/respeaker.jpg" width="250"></p><br />
 * PCA9685 16 Kanal 12 Bit PWM Servo driver for Raspberry Pi
-<p align="left"><img src="Bilder/pcf.jpg" width="150"></p><br />
+<p align="left"><img src="Bilder/pcf.jpg" width="250"></p><br />
 * Real Time Clock RTC DS3231 I2C
-<p align="left"><img src="Bilder/ds3231.jpg" width="150"></p><br />
+<p align="left"><img src="Bilder/ds3231.jpg" width="250"></p><br />
 * Case with enough space for the HAT
-<p align="left"><img src="Bilder/RPI4_CASE_SECURE_01.png" width="150"></p><br />
+<p align="left"><img src="Bilder/RPI4_CASE_SECURE_01.png" width="250"></p><br />
 <br />
 * this is my case<br />
 * and the selfmade case for the respeaker microphone extension.<br />
 * youi can see the i2c extender and the DS3231 plugged into the i2c extender<br />
-<p align="left"><img src="Bilder/my_case.jpg" width="150"></p><br />
+<p align="left"><img src="Bilder/my_case.jpg" width="250"></p><br />
 
 	
 ## Setup <a name="Setup"></a>
@@ -58,16 +60,16 @@ Change with ```su -``` and the new password to the root user. <br />
 Now change the passord for the user pi with ```passwd pi```.
 
 **2.**  Set-up with the command **raspi-config**. <br />
-<p align="left"><img src="Bilder/raspi-config1.jpeg" width="150"></p><br />
+<p align="left"><img src="Bilder/raspi-config1.jpeg" width="250"></p><br />
 
 > As root user with the command ```raspi-config``` under menu item **3 Interface Options**<br />
 activate **P2 SSH** and **P5 I2C** .<br />
 
-<p align="left"><img src="Bilder/raspi-config_ssh.jpeg" width="150"></p><br />
+<p align="left"><img src="Bilder/raspi-config_ssh.jpeg" width="250"></p><br />
 
 > And activate the localisation under menu item 5  **L1 Locale und L2 Timezone und L3 Keyboard **.<br />
 
-<p align="left"><img src="Bilder/raspi-config_hostname.jpeg" width="150"></p><br />
+<p align="left"><img src="Bilder/raspi-config_hostname.jpeg" width="250"></p><br />
 
 > I changed the hostname with this tool to rhasspy. <br />
 > Now i adjusted the config file for ssh ```vi /etc/ssh/sshd_config```.<br />
