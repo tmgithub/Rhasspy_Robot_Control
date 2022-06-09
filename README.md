@@ -58,29 +58,32 @@ Set up the  Raspberry Pi's 4 for the offline voice recognition:
 > Be careful the keyboard layout is english **z** instead of **y**. <br />
 > Give the command  ```sudo passwd``` so the password for the user root can be set <br />
 > Change with ```su -``` and the new password to the root user. <br />
-> Now change the passord for the user pi with ```passwd pi```.
+> Now change the passord for the user **pi** with ```passwd pi```.
 
 **2.**  Set-up with the command **raspi-config**. <br />
-><p align="left"><img src="Bilder/raspi-config1.jpeg" width="250"></p> <br />
-> As root user with the command **raspi-config**<br />
+> <p align="left"><img src="Bilder/raspi-config1.jpeg" width="250"></p> <br />
+> As root user with the command **raspi-config** <br />
+> ```Test```
 > under menu item **3 Interface Options** activate **P2 SSH** and **P5 I2C** .<br />
 > <br />
 > <p align="left"><img src="Bilder/raspi-config_ssh.jpeg" width="250"></p><br />
-> And activate the localisation under menu item **5 L1 Locale und L2 Timezone und L3 Keyboard** . <br />
+> And activate the **localisation** under menu item **5 L1 Locale und L2 Timezone und L3 Keyboard** . <br />
+> <br />
 > <p align="left"><img src="Bilder/raspi-config_hostname.jpeg" width="250"></p><br />
 > I changed the hostname with this tool to rhasspy. <br />
 > Now i adjusted the config file for ssh ```vi /etc/ssh/sshd_config```.<br />
 > Change the line with ```PermitRootLogin``` to ```yes```.<br />
 
 
-**3.**  Make a new start of the RPI ( reboot or init6 on the commandline )
+**3.**  Make a **new start** of the RPI ( reboot or init6 on the commandline )
 
 **4.**  Login via ssh **```ssh -lroot 192.168.XX.XX```**  <br />
 > Then type in the commands **```apt update```** to update the repository cache and start to install software: <br />
 > <br />
 > **```apt-get install python3-pip git mosquitto mosquitto-clients i2c-tools```** <br />
-> install **Docker** <br />
-> <br />
+<br />
+install **Docker** <br />
+<br />
 > ```**apt-get install** apt-transport-https ca-certificates curl gnupg-agent software-properties-common```<br />
 > <br />
 > ```**curl -fsSL** https://download.docker.com/linux/debian/gpg | sudo apt-key add -```<br />
