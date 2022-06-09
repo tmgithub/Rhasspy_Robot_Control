@@ -173,12 +173,12 @@ Program Sequence :
 >The program reaktion.py will be started  with the following command<br />
 >```cd /usr/local/intent/ python3 reaktion.py```<br />
 ><br />
-> **after loading the libraries** the main program start a subprocess
-> to speak word:
-> >subprocess.Popen(['/usr/bin/python3','/usr/local/intent/hermes_sprachausgabe.py'])
->> time.sleep(4)
->> globs.initialize() ### Globale Variablen initialisieren
->> MY.sound_initialize()
+> **after loading the libraries** the main program start a subprocess<br />
+> to speak word:<br />
+> >subprocess.Popen(['/usr/bin/python3','/usr/local/intent/hermes_sprachausgabe.py'])<br />
+>> time.sleep(4)<br />
+>> globs.initialize() ### Globale Variablen initialisieren<br />
+>> MY.sound_initialize()<br />
 
 
 
