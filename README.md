@@ -70,17 +70,17 @@ Hardware to buy:
 - Now change the passord for the user **pi** with ```passwd pi```.
 
 **2.**  Set-up with the command **raspi-config** . <br />
-><p align="left"><img src="Bilder/raspi-config1.jpeg" width="250"></p><br />
-> As root user with the command **raspi-config** <br />
-> under menu item **3 Interface Options** activate **P2 SSH** and **P5 I2C** .<br />
-> <br />
-> <p align="left"><img src="Bilder/raspi-config_ssh.jpeg" width="250"></p><br />
-> And activate the **localisation** under menu item **5 L1 Locale und L2 Timezone und L3 Keyboard** . <br />
-> <br />
-> <p align="left"><img src="Bilder/raspi-config_hostname.jpeg" width="250"></p><br />
-> I changed the hostname with this tool to rhasspy. <br />
-> Now i adjusted the config file for ssh ```vi /etc/ssh/sshd_config```.<br />
-> Change the line with ```PermitRootLogin``` to ```yes```.<br />
+<p align="left"><img src="Bilder/raspi-config1.jpeg" width="250"></p><br />
+- As root user with the command **raspi-config** <br />
+- under menu item **3 Interface Options** activate **P2 SSH** and **P5 I2C** .<br />
+<br />
+<p align="left"><img src="Bilder/raspi-config_ssh.jpeg" width="250"></p><br />
+- And activate the **localisation** under menu item **5 L1 Locale und L2 Timezone und L3 Keyboard** . <br />
+<br />
+<p align="left"><img src="Bilder/raspi-config_hostname.jpeg" width="250"></p><br />
+- I changed the hostname with this tool to rhasspy. <br />
+- Now i adjusted the config file for ssh ```vi /etc/ssh/sshd_config```.<br />
+- Change the line with ```PermitRootLogin``` to ```yes```.<br />
 
 
 **3.**  Make a **new start** of the RPI ( reboot or init6 on the commandline )
