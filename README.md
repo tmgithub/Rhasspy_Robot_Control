@@ -10,11 +10,11 @@
 * [Program Sequence](#Program_Sequence)
 
 ## General <a name="General"></a>
-This project controls servo motors of a roboter via offline voice control ( rhasspy ).<br />
-It is divided into two parts.<br />
-The main part controls the head.<br />
-The other parts are controlling themodules
-for example the left arm ( it will be realized by a Raspberry pi Zero)
+    This project controls servo motors of a roboter via offline voice control ( rhasspy ).<br />
+    It is divided into two parts.<br />
+    The main part controls the head.<br />
+    The other parts are controlling the modules:<br />
+    for example the left arm ( it will be realized by a Raspberry pi Zero)<br />
 
 ## Software
 * Raspberryos (opensource)
