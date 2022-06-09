@@ -27,6 +27,7 @@ Das Projekt soll nach erkannter Sprache Servomotoren ansteuern die einem Roboter
 ## Technik <a name="Technik"></a>
 Hardware gekauft:
 * Raspberry Pi 4 4 GByte RAM Kurzform RPi
+<p align="center"><img src="Bilder/rpi4.jpg" width="150"></p><br />
 
 
 
