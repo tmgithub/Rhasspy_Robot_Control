@@ -58,16 +58,16 @@ Hardware to buy:
     Set up the  Raspberry Pi's 4 for the offline voice recognition:
 
 **1.** Flash an image to an sd-card <br />
-        ```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-11-08/2021-10-30-raspios-bullseye-armhf-lite.zip```<br />
-    <br />
-    I used  ```Balena Etcher``` on Mac OS.<br /><br />
-    Put the SD_Card into the RPI connect a  **HDMI Monitor** and a  **USB-Keyboard** . <br />
-    Make a **physical network connection** via ethernet and plug in the power adapter cable. <br />
-    After the login prompt is blinking on the monitor, login with the user ```pi```and the password ```raspberry```<br />
-    Be careful the keyboard layout is english **z** instead of **y**. <br />
-    Give the command  ```sudo passwd``` so the password for the user root can be set <br />
-    Execute ```su -``` and the new password to the root user. <br />
-    Now change the passord for the user **pi** with ```passwd pi```.
+<pre><code>https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-11-08/2021-10-30-raspios-bullseye-armhf-lite.zip</pre></code><br />
+
+- I used  ```Balena Etcher``` on Mac OS.<br /><br />
+- Put the SD_Card into the RPI connect a  **HDMI Monitor** and a  **USB-Keyboard** . <br />
+- Make a **physical network connection** via ethernet and plug in the power adapter cable. <br />
+- After the login prompt is blinking on the monitor, login with the user ```pi```and the password ```raspberry```<br />
+- Be careful the keyboard layout is english **z** instead of **y**. <br />
+- Give the command  ```sudo passwd``` so the password for the user root can be set <br />
+- Execute ```su -``` and the new password to the root user. <br />
+- Now change the passord for the user **pi** with ```passwd pi```.
 
 **2.**  Set-up with the command **raspi-config** . <br />
 ><p align="left"><img src="Bilder/raspi-config1.jpeg" width="250"></p><br />
