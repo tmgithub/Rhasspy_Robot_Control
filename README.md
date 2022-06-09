@@ -60,10 +60,9 @@ Set up the  Raspberry Pi's 4 for the offline voice recognition:
 > Change with ```su -``` and the new password to the root user. <br />
 > Now change the passord for the user **pi** with ```passwd pi```.
 
-**2.**  Set-up with the command **raspi-config**. <br />
-> <p align="left"><img src="Bilder/raspi-config1.jpeg" width="250"></p> <br />
+**2.**  Set-up with the command **raspi-config** . <br />
+><p align="left"><img src="Bilder/raspi-config1.jpeg" width="250"></p><br />
 > As root user with the command **raspi-config** <br />
-> ```Test```
 > under menu item **3 Interface Options** activate **P2 SSH** and **P5 I2C** .<br />
 > <br />
 > <p align="left"><img src="Bilder/raspi-config_ssh.jpeg" width="250"></p><br />
