@@ -7,14 +7,14 @@
 * [Software](#Software)
 * [Setup](#Setup)
 * [Repository](#Repository)
-* [Program Sequence](#Program Sequence)
+* [Code](#Code)
 
 ## General <a name="General"></a>
-    This project controls servo motors of a roboter via offline voice control ( rhasspy ).<br />
-    It is divided into two parts.<br />
-    The main part controls the head.<br />
-    The other parts are controlling the modules:<br />
-    for example the left arm ( it will be realized by a Raspberry pi Zero)<br />
+    This project controls servo motors of a roboter via offline voice control ( rhasspy ).
+    It is divided into two parts.
+    The main part controls the head.
+    The other parts are controlling the modules:
+    for example the left arm ( it will be realized by a Raspberry pi Zero)
 
 ## Software
 * Raspberryos (opensource)
@@ -190,12 +190,14 @@ start the following commands :<br />
 
 the commands  push / pull  needs login.
 
-## Program Sequence <a name="Program Sequence"></a>
+## Code <a name="Code"></a>
 
 Program Sequence :
 
 The program reaktion.py will be started  with the following command<br />
+<br />
 ```cd /usr/local/intent/; python3 reaktion.py```<br />
+<br />
 **after loading the libraries** the main program start a subprocess the receiver for mqtt:<br />
         <pre><code>subprocess.Popen(['/usr/bin/python3','/usr/local/intent/hermes_sprachausgabe.py'])<br />
         time.sleep(4)<br />
