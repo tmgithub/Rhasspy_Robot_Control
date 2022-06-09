@@ -4,6 +4,7 @@
 
 * [General](#General)
 * [Hardware](#Hardware)
+* [Software](#Software)
 * [Setup](#Setup)
 * [Repository](#Repository)
 * [Program Sequence](#Program_Sequence)
@@ -19,8 +20,9 @@ for example the left arm ( it will be realized by a Raspberry pi Zero)
 * Raspberryos (opensource)
 >```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-lite.img.xz```
 * rhasspy ( offline Spracherkennungsprogramm)
-
-## Client Software
+* eclipse ide
+<p align="left"><img src="Bilder/ds3231.jpg" width="150"></p><br />
+** Client Software**
 * mqtt explorer <br />
 
 ## Hardware <a name="Hardware"></a>
