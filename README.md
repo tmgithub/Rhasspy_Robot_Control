@@ -24,15 +24,15 @@ This project controls servo motors of a roboter via offline voice control ( rhas
 
 ## Hardware <a name="Hardware"></a>
 Hardware to buy:
-* Raspberry Pi 4 4 GByte RAM Kurzform RPi
+* Raspberry Pi 4 4 GByte RAM short RPi
 <p align="left"><img src="Bilder/rpi4.jpg" width="150"></p><br />
 * ReSpeaker 6 Mic Array for Raspberry Pi
 <p align="left"><img src="Bilder/respeaker.jpg" width="150"></p><br />
-* PCA9685 16 Kanal 12 Bit PWM Servotreiber für Raspberry Pi
+* PCA9685 16 Kanal 12 Bit PWM Servo driver for Raspberry Pi
 <p align="left"><img src="Bilder/pcf.jpg" width="150"></p><br />
 * Real Time Clock RTC DS3231 I2C
 <p align="left"><img src="Bilder/ds3231.jpg" width="150"></p><br />
-* Gehäuse mit Platz für den HAT
+* Case with enough space for the HAT
 <p align="left"><img src="Bilder/RPI4_CASE_SECURE_01.png" width="150"></p><br />
 	
 ## Setup <a name="Setup"></a>
@@ -42,32 +42,32 @@ Set up the  Raspberry Pi's 4 for the offline voice recognition:
 >I used  ```Balena Etcher``` on Mac OS.<br /><br />
 Put the SD_Card into the RPI connect a  **HDMI Monitor** and a  **USB-Keyboard** . <br />
 Make a physical network connection via ethernet and plug in the power adapter cable. <br />
-Login with the user ```pi password raspberry```<br />
-Be careful the keyboard layout is english **z** instead of **y**. <br />
+Login with the user ```pi```and the password ```raspberry```<br />
+Be careful the keyboard layout is english **z`** instead of **y**. <br />
 Give the command  ```sudo passwd ``` so the password for the user root will be set <br />
 Change with ```su -``` and the new password to the root user. <br />
 Now change the passord for the user pi with ```passwd pi```.
 
-**2.**  Einrichtung mit **raspi-config**. <br />
+**2.**  Set-up with the command **raspi-config**. <br />
 <p align="left"><img src="Bilder/raspi-config1.jpeg" width="150"></p><br />
 
-> Als root User mit dem Kommandozeilen-Tool ```raspi-config``` wird unter dem Menüpunkt **3 Interface Options**<br />
-**P2 SSH** und **P5 I2C** aktiviert.<br />
+> As root user with the command ```raspi-config``` under menu item **3 Interface Options**<br />
+activate **P2 SSH** and **P5 I2C** .<br />
 
 <p align="left"><img src="Bilder/raspi-config_ssh.jpeg" width="150"></p><br />
 
-> Desweiteren können die localisations Options unter Punkt 5 gesetzt werden  L1 Locale und L2 Timezone und L3 Keyboard .<br />
+> And activate the localisation under menu item 5  L1 Locale und L2 Timezone und L3 Keyboard .<br />
 
 <p align="left"><img src="Bilder/raspi-config_hostname.jpeg" width="150"></p><br />
 
-> Der hostname wird mit dem tool auf rhasspy gesetzt. <br />
-> Die Konfigdatei für ssh wird mit ```vi /etc/ssh/sshd_config``` angepasst.<br />
-Der Wert ```PermitRootLogin``` wird auf yes gesetzt.<br />
+> I changed the hostname with this tool to rhasspy. <br />
+> Now i adjusted the config file for ssh ```vi /etc/ssh/sshd_config```.<br />
+Change the line with ```PermitRootLogin``` to ```yes```.<br />
 
 
-**3.**  Dann wird der RPi neu gestartet ( reboot oder init6 auf der Kommandozeile)
+**3.**  Make a new start of the RPI ( reboot or init6 on the commandline )
 
-**4.**  Nach erfolgreicher Anmeldung per ``` ssh -lroot 192.168.XX.XX```  <br />
+**4.**  Login via ssh ``` ssh -lroot 192.168.XX.XX```  <br />
 > Dann wird ebenfalls auf der Kommandozeile mit ```apt update``` der Repository Cache aktualisiert und folgende Programme werden installiert: <br />
 >``` apt-get install python3-pip git mosquitto mosquitto-clients i2c-tools``` <br />
 Docker installieren
