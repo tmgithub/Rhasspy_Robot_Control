@@ -7,7 +7,7 @@
 * [Software](#Software)
 * [Setup](#Setup)
 * [Repository](#Repository)
-* [Program Sequence](#Program_Sequence)
+* [Program Sequence](#Program Sequence)
 
 ## General <a name="General"></a>
     This project controls servo motors of a roboter via offline voice control ( rhasspy ).<br />
@@ -54,18 +54,19 @@ Hardware to buy:
 
 	
 ## Setup <a name="Setup"></a>
-Set up the  Raspberry Pi's 4 for the offline voice recognition:
+    Set up the  Raspberry Pi's 4 for the offline voice recognition:
 
 **1.** Flash an image to an sd-card <br />
->```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-11-08/2021-10-30-raspios-bullseye-armhf-lite.zip``` <br />
-> I used  ```Balena Etcher``` on Mac OS.<br /><br />
-> Put the SD_Card into the RPI connect a  **HDMI Monitor** and a  **USB-Keyboard** . <br />
-> Make a **physical network connection** via ethernet and plug in the power adapter cable. <br />
-> After the login prompt is blinking on the monitor, login with the user ```pi```and the password ```raspberry```<br />
-> Be careful the keyboard layout is english **z** instead of **y**. <br />
-> Give the command  ```sudo passwd``` so the password for the user root can be set <br />
-> Execute ```su -``` and the new password to the root user. <br />
-> Now change the passord for the user **pi** with ```passwd pi```.
+        ```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-11-08/2021-10-30-raspios-bullseye-armhf-lite.zip```<br />
+    <br />
+    I used  ```Balena Etcher``` on Mac OS.<br /><br />
+    Put the SD_Card into the RPI connect a  **HDMI Monitor** and a  **USB-Keyboard** . <br />
+    Make a **physical network connection** via ethernet and plug in the power adapter cable. <br />
+    After the login prompt is blinking on the monitor, login with the user ```pi```and the password ```raspberry```<br />
+    Be careful the keyboard layout is english **z** instead of **y**. <br />
+    Give the command  ```sudo passwd``` so the password for the user root can be set <br />
+    Execute ```su -``` and the new password to the root user. <br />
+    Now change the passord for the user **pi** with ```passwd pi```.
 
 **2.**  Set-up with the command **raspi-config** . <br />
 ><p align="left"><img src="Bilder/raspi-config1.jpeg" width="250"></p><br />
@@ -189,32 +190,32 @@ start the following commands :<br />
 
 the commands  push / pull  needs login.
 
-## Program_Sequence <a name="Program Sequence"></a>
+## Program Sequence <a name="Program Sequence"></a>
 
 Program Sequence :
 
->The program reaktion.py will be started  with the following command<br />
->```cd /usr/local/intent/ python3 reaktion.py```<br />
-><br />
-> **after loading the libraries** the main program start a subprocess<br />
-> a receiver for mqtt:<br />
-> >subprocess.Popen(['/usr/bin/python3','/usr/local/intent/hermes_sprachausgabe.py'])<br />
->> time.sleep(4)<br />
->> globs.initialize() ### Globale Variablen initialisieren<br />
->> MY.sound_initialize()<br />
->>> **The function on_connect() subscribes to the mqtt**<br />
->>> <br />
->>> def on_connect(client, userdata, flags, rc): ## Mit dem mosquitto verbinden und intent und hotword subscriben<br />
->>>     print('reaktion.py Connected at ',datetime.now())<br />
->>>     mqtt.subscribe('hermes/intent/#')<br />
->>>     mqtt.subscribe('hermes/hotword/#')<br />
->>     <br />
->> **at the end of the code**<br />
->> mqtt = mqtt.Client()<br /> 
->> mqtt.on_connect = on_connect<br />
->> mqtt.on_message = on_message<br />
->> mqtt.connect('localhost', 1883)<br />
->> mqtt.loop_forever()<br />
+The program reaktion.py will be started  with the following command<br />
+```cd /usr/local/intent/; python3 reaktion.py```<br />
+<br />
+**after loading the libraries** the main program start a subprocess the receiver for mqtt:<br />
+        <pre><code>subprocess.Popen(['/usr/bin/python3','/usr/local/intent/hermes_sprachausgabe.py'])<br />
+        time.sleep(4)<br />
+        globs.initialize() ### Globale Variablen initialisieren<br />
+        MY.sound_initialize()</code></pre><br />
+        <br />
+**The function on_connect() subscribes to the mqtt**<br />
+<br />
+    <pre><code>def on_connect(client, userdata, flags, rc): ## Mit dem mosquitto verbinden und intent und hotword subscriben<br />
+        print('reaktion.py Connected at ',datetime.now())<br />
+        mqtt.subscribe('hermes/intent/#')<br />
+        mqtt.subscribe('hermes/hotword/#')</code></pre><br />
+<br />
+**at the end of the file reaktion.py**<br />
+    <pre><code>mqtt = mqtt.Client()<br /> 
+    mqtt.on_connect = on_connect<br />
+    mqtt.on_message = on_message<br />
+    mqtt.connect('localhost', 1883)<br />
+    mqtt.loop_forever()</code></pre><br />
 
 
 
