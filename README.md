@@ -1,6 +1,6 @@
 # Rhasspy_Robot_Control
 
-## Inhalt
+## Content
 
 
 
@@ -13,6 +13,8 @@
 
 ## General <a name="General"></a>
 This project controls servo motors of a roboter via offline voice control ( rhasspy ).
+It is divided into two parts. The main part controls the head. The other parts are controlling themodules
+for example the left arm ( it will be realized by a Raspberry pi Zero)
 
 ## Software
 * Raspberryos (opensource)
