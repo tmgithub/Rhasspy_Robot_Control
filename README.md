@@ -31,7 +31,7 @@ Hardware gekauft:
 <p align="center"><img src="Bilder/respeaker.jpg" width="150"></p><br />
 <p align="center"><img src="Bilder/pcf.jpg" width="150"></p><br />
 <p align="center"><img src="Bilder/ds3231.jpg" width="150"></p><br />
-<p align="center"><img src="Bilder/RPI4_CASE_SECURE_01.jpg" width="150"></p><br />
+<p align="center"><img src="Bilder/RPI4_CASE_SECURE_01.png" width="150"></p><br />
 
 
 
@@ -189,14 +189,10 @@ bei den letzten Kommandos push / pull  muss man sich Anmelden.
 
 Programmablauf :
 
->Das Pythonprogramm pialarm_main.py wird mit
-```cd /usr/local/pialarm/ python3 pialarm_main.py```
+>Das Pythonprogramm reaktion.py wird mit
+```cd /usr/local/intent/ python3 reaktion.py```
 
 gestartet.
-
-
-
-Check der Interfaces hinzugefügt 
 
 
 
