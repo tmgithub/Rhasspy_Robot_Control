@@ -4,16 +4,15 @@
 
 
 
-* [Allgemeines](#Allgemeines)
-* [Technik](#Technik)
+* [General](#General)
 * [Hardware](#Hardware)
 * [Setup](#Setup)
 * [MQtt](#MQtt)
 * [Repository](#Repository)
-* [Programmablauf](#Programmablauf)
+* [Program Sequence](#Program Sequence)
 
-## Allgemeines <a name="Allgemeines"></a>
-Das Projekt soll nach erkannter Sprache Servomotoren ansteuern die einem Roboter gehören  .
+## General <a name="General"></a>
+This project controls servo motors of a roboter via offline voice control ( rhasspy ).
 
 ## Software
 * Raspberryos (opensource)
@@ -23,9 +22,8 @@ Das Projekt soll nach erkannter Sprache Servomotoren ansteuern die einem Roboter
 ## Client Software
 * mqtt explorer <br />
 
-	
-## Technik <a name="Technik"></a>
-Hardware gekauft:
+## Hardware <a name="Hardware"></a>
+Hardware to buy:
 * Raspberry Pi 4 4 GByte RAM Kurzform RPi
 <p align="left"><img src="Bilder/rpi4.jpg" width="150"></p><br />
 * ReSpeaker 6 Mic Array for Raspberry Pi
@@ -36,25 +34,19 @@ Hardware gekauft:
 <p align="left"><img src="Bilder/ds3231.jpg" width="150"></p><br />
 * Gehäuse mit Platz für den HAT
 <p align="left"><img src="Bilder/RPI4_CASE_SECURE_01.png" width="150"></p><br />
-
-
-
-
-
-## Hardware <a name="Hardware"></a>
 	
 ## Setup <a name="Setup"></a>
-Einrichtung des Raspberry Pi's für die offline Spracherkennung:
+Set up the  Raspberry Pi's 4 for the offline voice recognition:
 
-**1.** Zuerst wird eine SD-Card mit dem Image ```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-11-08/2021-10-30-raspios-bullseye-armhf-lite.zip``` geflasht. <br />
->Programme z.B. ```Balena Etcher``` unter Mac OS.<br /><br />
-Die SD_Card wird in den Raspberry Pi eingesetzt und ein **HDMI Monitor** und eine **USB-Tastatur** angeschlossen. <br />
-Das Netzwerkkabel und das Netzteil wird angeschlossen um die weiteren Schritte zu machen. <br />
-Die Anmeldung an der Kommandozeile erfolgt mit dem User ```pi Passwort raspberry```<br />
-Achtung Tastatur ist noch Englisch daher bitte **z** statt **y**. <br />
-Mit dem Befehl ```sudo passwd ``` wird das root Passwort gesetzt <br />
-Dann mit su - (**Achtung Tastatur - ist beim ß**) und dem neuen Passwort zum root user werden. <br />
-Als root User das Passwort des Users Pi mit ```passwd pi``` ebenfalls anpassen
+**1.** Flash an image to an sd-card ```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-11-08/2021-10-30-raspios-bullseye-armhf-lite.zip``` <br />
+>I used  ```Balena Etcher``` on Mac OS.<br /><br />
+Put the SD_Card into the RPI connect a  **HDMI Monitor** and a  **USB-Keyboard** . <br />
+Make a physical network connection via ethernet and plug in the power adapter cable. <br />
+Login with the user ```pi password raspberry```<br />
+Be careful the keyboard layout is english **z** instead of **y**. <br />
+Give the command  ```sudo passwd ``` so the password for the user root will be set <br />
+Change with ```su -``` and the new password to the root user. <br />
+Now change the passord for the user pi with ```passwd pi```.
 
 **2.**  Einrichtung mit **raspi-config**. <br />
 <p align="left"><img src="Bilder/raspi-config1.jpeg" width="150"></p><br />
