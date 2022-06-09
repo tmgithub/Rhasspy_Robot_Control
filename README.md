@@ -101,12 +101,12 @@ cd into the new folder <br />
 >```cd /usr/local/intent```. <br />
    
 
-**7.** Install the pythonlibrarys with pip3: <br />
+**5.** Install the pythonlibrarys with pip3: <br />
 >```pip3 install paho-mqtt``` install the mosquitto tools for the MQtt<br />
 >```pip3 install gpiozero``` install the connection to GPIO of the Raspberry<br />
 
 
-**10.** Programm als Dienst anlegen der beim booten gestartet wird : <br />
+**6.** Programm als Dienst anlegen der beim booten gestartet wird : <br />
 > Change to the folder ```/usr/local/intent``` and execute the command ```python3 -m venv /usr/local/intent```.<br />
 > The virtual environment would established.<br />
 > In the folder ```/usr/lib/systemd/system``` the file ```reaktion.service``` is copied or generated. <br />
@@ -126,6 +126,14 @@ cd into the new folder <br />
 >>```then the virual env is started``` <br />
 >>[Install]<br />
 >>WantedBy=multi-user.target<br />
+>>
+**7.** config Rhasspy
+<p align="left"><img src="Bilder/Rhasspy_MQTT.png" width="150"></p><br />
+<p align="left"><img src="Bilder/Rhasspy_audio_recording.png" width="150"></p><br />
+<p align="left"><img src="Bilder/Rhasspy_intent_recognition.png" width="150"></p><br />
+<p align="left"><img src="Bilder/Rhasspy_speech_to_text.png" width="150"></p><br />
+<p align="left"><img src="Bilder/Rhasspy_text_to_Speech.png" width="150"></p><br />
+<p align="left"><img src="Bilder/Rhasspy_wake_word.png" width="150"></p><br />
 
 
 ## Repository <a name="Repository"></a>
