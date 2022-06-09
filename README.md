@@ -51,14 +51,14 @@ Set up the  Raspberry Pi's 4 for the offline voice recognition:
 
 **1.** Flash an image to an sd-card <br />
 >```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-11-08/2021-10-30-raspios-bullseye-armhf-lite.zip``` <br />
->I used  ```Balena Etcher``` on Mac OS.<br /><br />
-Put the SD_Card into the RPI connect a  **HDMI Monitor** and a  **USB-Keyboard** . <br />
-Make a **physical network connection** via ethernet and plug in the power adapter cable. <br />
-After the login prompt is blinking on the monitor, login with the user ```pi```and the password ```raspberry```<br />
-Be careful the keyboard layout is english **z** instead of **y**. <br />
-Give the command  ```sudo passwd``` so the password for the user root can be set <br />
-Change with ```su -``` and the new password to the root user. <br />
-Now change the passord for the user pi with ```passwd pi```.
+> I used  ```Balena Etcher``` on Mac OS.<br /><br />
+> Put the SD_Card into the RPI connect a  **HDMI Monitor** and a  **USB-Keyboard** . <br />
+> Make a **physical network connection** via ethernet and plug in the power adapter cable. <br />
+> After the login prompt is blinking on the monitor, login with the user ```pi```and the password ```raspberry```<br />
+> Be careful the keyboard layout is english **z** instead of **y**. <br />
+> Give the command  ```sudo passwd``` so the password for the user root can be set <br />
+> Change with ```su -``` and the new password to the root user. <br />
+> Now change the passord for the user pi with ```passwd pi```.
 
 **2.**  Set-up with the command **raspi-config**. <br />
 ><p align="left"><img src="Bilder/raspi-config1.jpeg" width="250"></p> <br />
@@ -75,22 +75,26 @@ Now change the passord for the user pi with ```passwd pi```.
 
 **3.**  Make a new start of the RPI ( reboot or init6 on the commandline )
 
-**4.**  Login via ssh ``` ssh -lroot 192.168.XX.XX```  <br />
-> Then type in the commands ```apt update``` to update the repository cache and start to install software: <br />
->``` apt-get install python3-pip git mosquitto mosquitto-clients i2c-tools``` <br />
->install Docker <br />
-```apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common```<br />
-  
-```curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -```<br />
-```apt-key fingerprint 0EBFCD88```<br />
-
-```echo "deb [arch=armhf signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null```<br />
-
-```apt-get update```<br />
-```apt-get install docker-ce docker-ce-cli containerd.io```<br />
-
-docker run -d -p 12101:12101 --name rhasspy --restart unless-stopped -v "$HOME/.config/rhasspy/profiles:/profiles" -v "/etc/localtime:/etc/localtime:ro" --device /dev/snd:/dev/snd rhasspy/rhasspy --user-profiles /profiles --profile de
-** Now the rhasspy needs some configurations**
+**4.**  Login via ssh **```ssh -lroot 192.168.XX.XX```**  <br />
+> Then type in the commands **```apt update```** to update the repository cache and start to install software: <br />
+> <br />
+> **```apt-get install python3-pip git mosquitto mosquitto-clients i2c-tools```** <br />
+> install **Docker** <br />
+> <br />
+> ```**apt-get install** apt-transport-https ca-certificates curl gnupg-agent software-properties-common```<br />
+> <br />
+> ```**curl -fsSL** https://download.docker.com/linux/debian/gpg | sudo apt-key add -```<br />
+> <br />
+> ```**apt-key** fingerprint 0EBFCD88```<br />
+> <br />
+> ```**echo** "deb [arch=armhf signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null```<br />
+> <br />
+> ```apt-get update```<br />
+> ```apt-get install docker-ce docker-ce-cli containerd.io```<br />
+> <br />
+> docker run -d -p 12101:12101 --name rhasspy --restart unless-stopped -v "$HOME/.config/rhasspy/profiles:/profiles" -v "/etc/localtime:/etc/localtime:ro" --device /dev/snd:/dev/snd rhasspy/rhasspy --user-profiles /profiles --profile de
+> V
+**Now the rhasspy needs some configurations**
 
 change to the folder  <br />
 
