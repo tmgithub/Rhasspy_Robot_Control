@@ -28,9 +28,13 @@ Das Projekt soll nach erkannter Sprache Servomotoren ansteuern die einem Roboter
 Hardware gekauft:
 * Raspberry Pi 4 4 GByte RAM Kurzform RPi
 <p align="left"><img src="Bilder/rpi4.jpg" width="150"></p><br />
+* ReSpeaker 6 Mic Array for Raspberry Pi
 <p align="left"><img src="Bilder/respeaker.jpg" width="150"></p><br />
+* PCA9685 16 Kanal 12 Bit PWM Servotreiber für Raspberry Pi
 <p align="left"><img src="Bilder/pcf.jpg" width="150"></p><br />
+* Real Time Clock RTC DS3231 I2C
 <p align="left"><img src="Bilder/ds3231.jpg" width="150"></p><br />
+* Gehäuse mit Platz für den HAT
 <p align="left"><img src="Bilder/RPI4_CASE_SECURE_01.png" width="150"></p><br />
 
 
