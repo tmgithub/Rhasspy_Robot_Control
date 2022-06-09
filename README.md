@@ -16,7 +16,7 @@
     The other parts are controlling the modules:
     for example the left arm ( it will be realized by a Raspberry pi Zero)
 <br />
-my robot site: [roboter](https://roboter.mindach.net/)
+my robot site: https://roboter.mindach.net
 
 ## Software
 * Raspberryos (opensource)
