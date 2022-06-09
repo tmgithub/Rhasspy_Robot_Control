@@ -42,7 +42,7 @@ Hardware to buy:
 <br />
 * this is my case<br />
 * and the selfmade case for the respeaker microphone extension.<br />
-* youi can see the i2c extender and the DS3231 plugged into the i2c extender<br />
+* you can see the **i2c extender** and the **DS3231** plugged into the **i2c extender**<br />
 <p align="left"><img src="Bilder/my_case.jpg" width="250"></p><br />
 
 	
