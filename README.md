@@ -168,12 +168,23 @@ the commands  push / pull  needs login.
 
 ## Program_Sequence <a name="Program Sequence"></a>
 
-Program Sequence :
+Program Sequence :
 
->Das Pythonprogramm reaktion.py wird mit
-```cd /usr/local/intent/ python3 reaktion.py```
+>The program reaktion.py will be started  with the following command<br />
+>```cd /usr/local/intent/ python3 reaktion.py```<br />
+><br />
+> **after loading the libraries** the main program start a subprocess
+> to speak word:
+> >subprocess.Popen(['/usr/bin/python3','/usr/local/intent/hermes_sprachausgabe.py'])
+>> time.sleep(4)
+>> globs.initialize() ### Globale Variablen initialisieren
+>> MY.sound_initialize()
 
-gestartet.
+
+
+
+
+
 
 
 
