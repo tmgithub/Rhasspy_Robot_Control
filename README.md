@@ -196,20 +196,16 @@ Program Sequence :
 
 The program reaktion.py will be started  with the following command<br />
 ```cd /usr/local/intent/; python3 reaktion.py```<br />
-<br />
 **after loading the libraries** the main program start a subprocess the receiver for mqtt:<br />
         <pre><code>subprocess.Popen(['/usr/bin/python3','/usr/local/intent/hermes_sprachausgabe.py'])<br />
         time.sleep(4)<br />
         globs.initialize() ### Globale Variablen initialisieren<br />
         MY.sound_initialize()</code></pre><br />
-        <br />
 **The function on_connect() subscribes to the mqtt**<br />
-<br />
     <pre><code>def on_connect(client, userdata, flags, rc): ## Mit dem mosquitto verbinden und intent und hotword subscriben<br />
-        print('reaktion.py Connected at ',datetime.now())<br />
-        mqtt.subscribe('hermes/intent/#')<br />
-        mqtt.subscribe('hermes/hotword/#')</code></pre><br />
-<br />
+            print('reaktion.py Connected at ',datetime.now())<br />
+            mqtt.subscribe('hermes/intent/#')<br />
+            mqtt.subscribe('hermes/hotword/#')</code></pre><br />
 **at the end of the file reaktion.py**<br />
     <pre><code>mqtt = mqtt.Client()<br /> 
     mqtt.on_connect = on_connect<br />
