@@ -47,16 +47,14 @@ Hardware gekauft:
 Einrichtung des Raspberry Pi's für die offline Spracherkennung:
 
 **1.** Zuerst wird eine SD-Card mit dem Image ```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-11-08/2021-10-30-raspios-bullseye-armhf-lite.zip``` geflasht. <br />
->Programme z.B. ```Balena Etcher``` unter Mac OS.<br />
-Die SD_Card wird eingesetzt und ein **HDMI Monitor** und eine **USB-Tastatur** angeschlossen. <br />
+>Programme z.B. ```Balena Etcher``` unter Mac OS.<br /><br />
+Die SD_Card wird in den Raspberry Pi eingesetzt und ein **HDMI Monitor** und eine **USB-Tastatur** angeschlossen. <br />
 Das Netzwerkkabel und das Netzteil wird angeschlossen um die weiteren Schritte zu machen. <br />
 Die Anmeldung an der Kommandozeile erfolgt mit dem User ```pi Passwort raspberry```<br />
 Achtung Tastatur ist noch Englisch daher bitte **z** statt **y**. <br />
 Mit dem Befehl ```sudo passwd ``` wird das root Passwort gesetzt <br />
 Dann mit su - (**Achtung Tastatur - ist beim ß**) und dem neuen Passwort zum root user werden. <br />
 Als root User das Passwort des Users Pi mit ```passwd pi``` ebenfalls anpassen
-
-
 
 **2.**  Einrichtung mit **raspi-config**. <br />
 <p align="center"><img src="Bilder/raspi-config1.jpeg" width="150"></p><br />
