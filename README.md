@@ -49,7 +49,8 @@ Hardware to buy:
 ## Setup <a name="Setup"></a>
 Set up the  Raspberry Pi's 4 for the offline voice recognition:
 
-**1.** Flash an image to an sd-card ```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-11-08/2021-10-30-raspios-bullseye-armhf-lite.zip``` <br />
+**1.** Flash an image to an sd-card <br />
+>```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-11-08/2021-10-30-raspios-bullseye-armhf-lite.zip``` <br />
 >I used  ```Balena Etcher``` on Mac OS.<br /><br />
 Put the SD_Card into the RPI connect a  **HDMI Monitor** and a  **USB-Keyboard** . <br />
 Make a **physical network connection** via ethernet and plug in the power adapter cable. <br />
@@ -60,9 +61,10 @@ Change with ```su -``` and the new password to the root user. <br />
 Now change the passord for the user pi with ```passwd pi```.
 
 **2.**  Set-up with the command **raspi-config**. <br />
-><p align="left"><img src="Bilder/raspi-config1.jpeg" width="250"></p><br />
-> As root user with the command ```raspi-config``` under menu item **3 Interface Options**<br />
-> activate **P2 SSH** and **P5 I2C** .<br />
+><p align="left"><img src="Bilder/raspi-config1.jpeg" width="250"></p> <br />
+> As root user with the command **raspi-config**<br />
+> under menu item **3 Interface Options** activate **P2 SSH** and **P5 I2C** .<br />
+> <br />
 > <p align="left"><img src="Bilder/raspi-config_ssh.jpeg" width="250"></p><br />
 > And activate the localisation under menu item **5 L1 Locale und L2 Timezone und L3 Keyboard** . <br />
 > <p align="left"><img src="Bilder/raspi-config_hostname.jpeg" width="250"></p><br />
