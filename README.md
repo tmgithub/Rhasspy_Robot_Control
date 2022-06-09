@@ -18,13 +18,15 @@ for example the left arm ( it will be realized by a Raspberry pi Zero)
 
 ## Software
 * Raspberryos (opensource)
->```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-lite.img.xz```
+>```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-lite.img.xz```<br />
+>
 * rhasspy ( offline Spracherkennungsprogramm)
 >* eclipse ide
 >> this is the place i am working with<br />
 >> <br />
->> <p align="left"><img src="Bilder/eclipse.png" width="400"></p><br />
-**Client Software**
+>> <p align="left"><img src="Bilder/eclipse.png" width="600"></p><br />
+<br />
+**Client Software** <br />
 * mqtt explorer <br />
 
 ## Hardware <a name="Hardware"></a>
@@ -40,10 +42,10 @@ Hardware to buy:
 * Case with enough space for the HAT
 <p align="left"><img src="Bilder/RPI4_CASE_SECURE_01.png" width="250"></p><br />
 <br />
-* this is my case<br />
+* **this is my case**<br />
 * and the selfmade case for the respeaker microphone extension.<br />
 * you can see the **i2c extender** and the **DS3231** plugged into the **i2c extender**<br />
-<p align="left"><img src="Bilder/my_case.jpg" width="250"></p><br />
+<img src="Bilder/my_case.jpg" width="250"><br />
 
 	
 ## Setup <a name="Setup"></a>
@@ -76,12 +78,12 @@ Set up the  Raspberry Pi's 4 for the offline voice recognition:
 
 **3.**  Make a **new start** of the RPI ( reboot or init6 on the commandline )
 
-**4.**  Login via ssh **```ssh -lroot 192.168.XX.XX```**  <br />
-> Then type in the commands **```apt update```** to update the repository cache and start to install software: <br />
+**4.**  Login via ssh ```ssh -lroot 192.168.XX.XX```  <br />
+> Then type in the commands apt update to update the repository cache and start to install software:<br />
 > <br />
-> **```apt-get install python3-pip git mosquitto mosquitto-clients i2c-tools```** <br />
+> apt-get install python3-pip git mosquitto mosquitto-clients i2c-tools <br />
 <br />
-install **Docker** <br />
+**5.** install **Docker** <br />
 <br />
 > ```**apt-get install** apt-transport-https ca-certificates curl gnupg-agent software-properties-common```<br />
 > <br />
