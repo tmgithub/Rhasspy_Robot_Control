@@ -35,6 +35,9 @@ Hardware to buy:
 <p align="left"><img src="Bilder/ds3231.jpg" width="150"></p><br />
 * Case with enough space for the HAT
 <p align="left"><img src="Bilder/RPI4_CASE_SECURE_01.png" width="150"></p><br />
+* this is my case and the selfmade case for the respeaker microphone extension.
+<p align="left"><img src="Bilder/my_case.jpg" width="150"></p><br />
+
 	
 ## Setup <a name="Setup"></a>
 Set up the  Raspberry Pi's 4 for the offline voice recognition:
