@@ -130,10 +130,12 @@ cd into the new folder <br />
 **7.** config Rhasspy
 <p align="left"><img src="Bilder/Rhasspy_MQTT.png" width="150"></p><br />
 <p align="left"><img src="Bilder/Rhasspy_audio_recording.png" width="150"></p><br />
-<p align="left"><img src="Bilder/Rhasspy_intent_recognition.png" width="150"></p><br />
-<p align="left"><img src="Bilder/Rhasspy_speech_to_text.png" width="150"></p><br />
-<p align="left"><img src="Bilder/Rhasspy_text_to_Speech.png" width="150"></p><br />
 <p align="left"><img src="Bilder/Rhasspy_wake_word.png" width="150"></p><br />
+<p align="left"><img src="Bilder/Rhasspy_speech_to_text.png" width="150"></p><br />
+<p align="left"><img src="Bilder/Rhasspy_intent_recognition.png" width="150"></p><br />
+<p align="left"><img src="Bilder/Rhasspy_text_to_Speech.png" width="150"></p><br />
+
+
 
 
 ## Repository <a name="Repository"></a>
