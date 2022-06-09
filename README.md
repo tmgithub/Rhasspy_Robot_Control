@@ -17,7 +17,7 @@ Das Projekt soll nach erkannter Sprache Servomotoren ansteuern die einem Roboter
 
 ## Software
 * Raspberryos (opensource)
->```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-11-08/2021-10-30-raspios-bullseye-armhf-lite.zip```
+>```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-lite.img.xz```
 * rhasspy ( offline Spracherkennungsprogramm)
 
 ## Client Software
@@ -79,6 +79,18 @@ Der Wert ```PermitRootLogin``` wird auf yes gesetzt.<br />
 
 **5.** Dann wird ebenfalls auf der Kommandozeile mit ```apt update``` der Repository Cache aktualisiert und folgende Programme werden installiert: <br />
 >``` apt-get install python3-pip git mosquitto mosquitto-clients i2c-tools``` <br />
+Docker installieren
+apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+  
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+apt-key fingerprint 0EBFCD88
+
+echo "deb [arch=armhf signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+apt-get update
+apt-get install docker-ce docker-ce-cli containerd.io
+
+docker run -d -p 12101:12101 --name rhasspy --restart unless-stopped -v "$HOME/.config/rhasspy/profiles:/profiles" -v "/etc/localtime:/etc/localtime:ro" --device /dev/snd:/dev/snd rhasspy/rhasspy --user-profiles /profiles --profile de
 
 dann in das Verzeichnis wechseln <br />
 
@@ -93,33 +105,7 @@ in das neu erzeugte Verzeichnis mit <br />
 >```cd /usr/local/pialarm/pideps``` <br />
    
 wechseln. <br />
-
-Dort den Befehl : <br />
-
->```dpkg -i libmbed*.deb``` <br />
-
-ausführen um die fehlenden Abhängigkeiten aufzulösen. <br />
    
-Jetzt kann die Funksoftware Pilight installiert werden <br />
-
->```apt-get install pilight```
-   
-**6.** Anpassen der Konfigdateien für pilight und mosquitto durch kopieren der Dateien <br />
-   
->```cp /usr/local/pialarm/Hilfsdateien/config.json /etc/pilight``` <br />
-
-und <br />
-
->```cp /usr/local/pialarm/Hilfsdateien/mosquitto.conf /etc/mosquitto/``` <br />
-
-   
-Die Dienste müssen nun neu gestartet werden: <br />
-
->```systemctl restart mosquitto;systemctl status mosquitto``` <br />
-   
-und <br />
-
->```systemctl restart pilight;systemctl status pilight``` <br />
 
 **7.** Installation der Pythonlibrarys mit pip3: <br />
 >```pip3 install paho-mqtt``` Installiert die mosquitto tools für den MQtt<br />
@@ -131,24 +117,6 @@ und <br />
 
 **8.** Weitere nützliche Software : <br />
 
->```apt-get install wavemon mlocate```
-
-**9.** Einrichten des Zugriffs auf den USB-MobileData Stick : <br />
->```ssh -lroot 10.1.1.19``` <br />
-> per ssh auf das System einloggen. <br />
-> Die Datei ```sshd_config``` anpassen mit  ```vi /etc/ssh/sshd_config```.<br />
-> Die Werte <br />
-><br />
-> ```X11Forwarding yes```<br />
-> ```X11UseLocalhost no```<br />
-> einfügen und und den Service mit ```service ssh restart``` neu starten<br />
-><br />
-> Dann mit ```exit``` ausloggen und mit ```ssh -X -lroot 10.1.1.19``` neu anmelden<br />
-> wichtig ist das <b>-X</b> da dann die grafische Ausgabe auf eigenen Rechner weitergeleitet wird <br />
-> den Firefox aufrufen. Die Ausgabe erfolgt dann auf dem Rechner der den ssh Aufruf gemacht hat.<br />
-><br />
-> Als Adresse ```http://192.168.8.1``` eingeben. Dann kann man die Qualität des LTE-Signals sehen
-<p align="center"><img src="Bilder/Huawei_usbstick.png" width="150"></p><br />
 
 **10.** Programm als Dienst anlegen der beim booten gestartet wird : <br />
 > In dem Verzeichnis ```/usr/local/pialarm```den Befehl ```python3 -m venv /usr/local/pialarm``` ausführen.<br />
