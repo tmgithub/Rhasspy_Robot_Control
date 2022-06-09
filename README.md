@@ -70,18 +70,19 @@ Change the line with ```PermitRootLogin``` to ```yes```.<br />
 **4.**  Login via ssh ``` ssh -lroot 192.168.XX.XX```  <br />
 > Then type in the commands ```apt update``` to update the repository cache and start to install software: <br />
 >``` apt-get install python3-pip git mosquitto mosquitto-clients i2c-tools``` <br />
-install Docker 
-apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+>install Docker <br />
+```apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common```<br />
   
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-apt-key fingerprint 0EBFCD88
+```curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -```<br />
+```apt-key fingerprint 0EBFCD88```<br />
 
-echo "deb [arch=armhf signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```echo "deb [arch=armhf signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null```<br />
 
-apt-get update
-apt-get install docker-ce docker-ce-cli containerd.io
+```apt-get update```<br />
+```apt-get install docker-ce docker-ce-cli containerd.io```<br />
 
 docker run -d -p 12101:12101 --name rhasspy --restart unless-stopped -v "$HOME/.config/rhasspy/profiles:/profiles" -v "/etc/localtime:/etc/localtime:ro" --device /dev/snd:/dev/snd rhasspy/rhasspy --user-profiles /profiles --profile de
+** Now the rhasspy needs some configurations**
 
 change to the folder  <br />
 
@@ -102,39 +103,39 @@ cd into the new folder <br />
 
 
 **10.** Programm als Dienst anlegen der beim booten gestartet wird : <br />
-> In dem Verzeichnis ```/usr/local/intent```den Befehl ```python3 -m venv /usr/local/intent``` ausführen.<br />
-> Damit wird das virtuelle Environment angelegt.<br />
-> In dem Verzeichnis ```/usr/lib/systemd/system```wird die Datei ```reaktion.service``` angelegt oder kopiert. <br />
-> Dann wird dem Daemon mit ```systemctl daemon-reload``` die neue Datei bekannt gemacht.<br /><br />
-> Mit ```systemctl enable reaktion.service``` wird die Datei zum Ausführen während des Systemstarts eingerichtet.<br />
-> ```systemctl start reaktion.service``` startet den Service manuell. Das Stoppen ist dann mit ```systemctl stop reaktion.service``` möglich.<br />
-> Man kann mit ```systemctl status reaktion.service``` abrufen ob das Programm läuft.<br /><br />
-> Der Inhalt von ```reaktion.service``` :<br /><br />
+> Change to the folder ```/usr/local/intent``` and execute the command ```python3 -m venv /usr/local/intent```.<br />
+> The virtual environment would established.<br />
+> In the folder ```/usr/lib/systemd/system``` the file ```reaktion.service``` is copied or generated. <br />
+> Tell the daemon with ```systemctl daemon-reload``` about the new file.<br /><br />
+> with ```systemctl enable reaktion.service``` the file is ready to be used while system starts.<br />
+> ```systemctl start reaktion.service``` will start the service manual. The stopping is with the command ```systemctl stop reaktion.service``` possible.<br />
+> You can show the status by typing ```systemctl status reaktion.service```.<br /><br />
+> The content of the file```reaktion.service``` :<br /><br />
 >>[Unit]<br />
->>Description=Robot_Control   ```Beschreibung des Services```<br />
+>>Description=Robot_Control   ```Descripotion of the Service```<br />
 >>After=network.target<br />
 >>[Service]<br />
->>Type=idle ```Der Typ "idle" stellt sicher, dass das Kommando erst ausgeführt wird, wenn alle anderen Dienste geladen sind.``` <br />
+>>Type=idle ```The type idle means the command starts when all other processes are finished.``` <br />
 >>Restart=on-failure<br />
 >>User=root<br />
->>ExecStart=/bin/bash -c 'cd /usr/local/intent/ && source bin/activate && python3 reaktion.py' ```erst wird ein cd in das Verzeichnis ausgeführt```<br />
->>```Dann wird die virtuelle Umgebung gestartet und dann das Programm selbst``` <br />
+>>ExecStart=/bin/bash -c 'cd /usr/local/intent/ && source bin/activate && python3 reaktion.py' ```first cd to the folder```<br />
+>>```then the virual env is started``` <br />
 >>[Install]<br />
 >>WantedBy=multi-user.target<br />
 
 
 ## Repository <a name="Repository"></a>
 
-Repository akualisieren :<br />
-In dem Verzeichnis /usr/local/intent <br />
-folgende Kommandos eingeben :<br />
+actualize Repository  :<br />
+change to folder /usr/local/intent <br />
+start the following commands :<br />
 
 ```git add -A```<br />
 ```git commit -m "sync"```<br />
 ```git pull```<br />
 ```git push```<br />
 
-bei den letzten Kommandos push / pull  muss man sich Anmelden.
+the commands  push / pull  needs login.
 
 ## Program_Sequence <a name="Program Sequence"></a>
 
