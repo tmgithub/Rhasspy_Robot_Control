@@ -44,7 +44,7 @@ Hardware gekauft:
 ## Hardware <a name="Hardware"></a>
 	
 ## Setup <a name="Setup"></a>
-Einrichtung des Alarm Pi:
+Einrichtung des Raspberry Pi's für die offline Spracherkennung:
 
 **1.** Zuerst wird eine SD-Card mit dem Image ```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-11-08/2021-10-30-raspios-bullseye-armhf-lite.zip``` geflasht. <br />
 >Programme z.B. ```Balena Etcher``` unter Mac OS.<br />
@@ -78,10 +78,7 @@ Der Wert ```PermitRootLogin``` wird auf yes gesetzt.<br />
 **3.**  Dann wird der RPi neu gestartet ( reboot oder init6 auf der Kommandozeile)
 
 **4.**  Nach erfolgreicher Anmeldung per ``` ssh -lroot 192.168.XX.XX```  <br />
-
-
-
-**5.** Dann wird ebenfalls auf der Kommandozeile mit ```apt update``` der Repository Cache aktualisiert und folgende Programme werden installiert: <br />
+> Dann wird ebenfalls auf der Kommandozeile mit ```apt update``` der Repository Cache aktualisiert und folgende Programme werden installiert: <br />
 >``` apt-get install python3-pip git mosquitto mosquitto-clients i2c-tools``` <br />
 Docker installieren
 apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
@@ -118,8 +115,6 @@ wechseln. <br />
 >```pip3 install python-pushover``` Installiert tools um den Pushover-Server zu erreichen<br />
 >```pip3 install pysnmp``` Installiert snmp tools<br />
 >```pip3 install bluepy.btle``` Installiert bluetooth Librarys<br />
-
-**8.** Weitere nützliche Software : <br />
 
 
 **10.** Programm als Dienst anlegen der beim booten gestartet wird : <br />
