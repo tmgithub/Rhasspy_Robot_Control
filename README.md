@@ -133,7 +133,7 @@ cd into the new folder <br />
 > i use pyaudio for recording the voice<br /><br />
 > <p align="left"><img src="Bilder/Rhasspy_audio_recording.png" width="150"></p><br />
 > <br />
-> my roboter is named kai, i use the wakeword engine **Rhasspy Raven**<br />
+> my roboter is named kai, i use the wakeword engine **Rhasspy Raven** <br />
 > <p align="left"><img src="Bilder/Rhasspy_wake_word.png" width="150"></p><br />
 > <br />
 > speech to text via kaldi <br />
@@ -147,10 +147,6 @@ cd into the new folder <br />
 > <br />
 > the sound is played by aplay ( for example error sound etc.) <br />
 > <p align="left"><img src="Bilder/rhasspy_audio_play.png" width="150"></p><br />
-
-
-
-
 
 
 ## Repository <a name="Repository"></a>
