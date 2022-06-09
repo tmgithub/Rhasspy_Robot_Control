@@ -9,7 +9,7 @@
 * [Setup](#Setup)
 * [MQtt](#MQtt)
 * [Repository](#Repository)
-* [Program Sequence](#Program Sequence)
+* [Program Sequence](#Program_Sequence)
 
 ## General <a name="General"></a>
 This project controls servo motors of a roboter via offline voice control ( rhasspy ).
@@ -136,9 +136,9 @@ folgende Kommandos eingeben :<br />
 
 bei den letzten Kommandos push / pull  muss man sich Anmelden.
 
-## Programmablauf <a name="Programmablauf"></a>
+## Program_Sequence <a name="Program Sequence"></a>
 
-Programmablauf :
+Program Sequence :
 
 >Das Pythonprogramm reaktion.py wird mit
 ```cd /usr/local/intent/ python3 reaktion.py```
