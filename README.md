@@ -15,11 +15,12 @@
     The main part controls the head.
     The other parts are controlling the modules:
     for example the left arm ( it will be realized by a Raspberry pi Zero)
+    
+    my robot page: (https://roboter.mindach.net)
 
 ## Software
 * Raspberryos (opensource)
->```https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-lite.img.xz```<br />
->
+ <pre><code>https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-lite.img.xz</pre></code><br />
 * rhasspy ( offline Spracherkennungsprogramm)
 >* eclipse ide
 >> this is the place i am working with<br />
