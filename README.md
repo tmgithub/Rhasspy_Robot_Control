@@ -43,7 +43,7 @@ Set up the  Raspberry Pi's 4 for the offline voice recognition:
 Put the SD_Card into the RPI connect a  **HDMI Monitor** and a  **USB-Keyboard** . <br />
 Make a physical network connection via ethernet and plug in the power adapter cable. <br />
 Login with the user ```pi```and the password ```raspberry```<br />
-Be careful the keyboard layout is english **z`** instead of **y**. <br />
+Be careful the keyboard layout is english **z** instead of **y**. <br />
 Give the command  ```sudo passwd ``` so the password for the user root will be set <br />
 Change with ```su -``` and the new password to the root user. <br />
 Now change the passord for the user pi with ```passwd pi```.
@@ -56,7 +56,7 @@ activate **P2 SSH** and **P5 I2C** .<br />
 
 <p align="left"><img src="Bilder/raspi-config_ssh.jpeg" width="150"></p><br />
 
-> And activate the localisation under menu item 5  L1 Locale und L2 Timezone und L3 Keyboard .<br />
+> And activate the localisation under menu item 5  **L1 Locale und L2 Timezone und L3 Keyboard **.<br />
 
 <p align="left"><img src="Bilder/raspi-config_hostname.jpeg" width="150"></p><br />
 
@@ -68,9 +68,9 @@ Change the line with ```PermitRootLogin``` to ```yes```.<br />
 **3.**  Make a new start of the RPI ( reboot or init6 on the commandline )
 
 **4.**  Login via ssh ``` ssh -lroot 192.168.XX.XX```  <br />
-> Dann wird ebenfalls auf der Kommandozeile mit ```apt update``` der Repository Cache aktualisiert und folgende Programme werden installiert: <br />
+> Then type in the commands ```apt update``` to update the repository cache and start to install software: <br />
 >``` apt-get install python3-pip git mosquitto mosquitto-clients i2c-tools``` <br />
-Docker installieren
+install Docker 
 apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
   
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
@@ -83,24 +83,22 @@ apt-get install docker-ce docker-ce-cli containerd.io
 
 docker run -d -p 12101:12101 --name rhasspy --restart unless-stopped -v "$HOME/.config/rhasspy/profiles:/profiles" -v "/etc/localtime:/etc/localtime:ro" --device /dev/snd:/dev/snd rhasspy/rhasspy --user-profiles /profiles --profile de
 
-dann in das Verzeichnis wechseln <br />
+change to the folder  <br />
 
 >```cd /usr/local```
    
-den folgenden Befehl ausführen : <br />
+type following command : <br />
 
 >```git clone https://github.com/tmgithub/Rhasspy_Robot_Control.git```<br />
  
-in das neu erzeugte Verzeichnis mit <br />
+cd into the new folder <br />
 
->```cd /usr/local/intent``` <br />
-   
-wechseln. <br />
+>```cd /usr/local/intent```. <br />
    
 
-**7.** Installation der Pythonlibrarys mit pip3: <br />
->```pip3 install paho-mqtt``` Installiert die mosquitto tools für den MQtt<br />
->```pip3 install gpiozero``` Installiert den Zugriff auf das GPIO des Raspberry's<br />
+**7.** Install the pythonlibrarys with pip3: <br />
+>```pip3 install paho-mqtt``` install the mosquitto tools for the MQtt<br />
+>```pip3 install gpiozero``` install the connection to GPIO of the Raspberry<br />
 
 
 **10.** Programm als Dienst anlegen der beim booten gestartet wird : <br />
