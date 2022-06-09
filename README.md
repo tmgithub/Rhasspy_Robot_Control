@@ -2,12 +2,9 @@
 
 ## Content
 
-
-
 * [General](#General)
 * [Hardware](#Hardware)
 * [Setup](#Setup)
-* [MQtt](#MQtt)
 * [Repository](#Repository)
 * [Program Sequence](#Program_Sequence)
 
