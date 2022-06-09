@@ -42,9 +42,9 @@ Set up the  Raspberry Pi's 4 for the offline voice recognition:
 >I used  ```Balena Etcher``` on Mac OS.<br /><br />
 Put the SD_Card into the RPI connect a  **HDMI Monitor** and a  **USB-Keyboard** . <br />
 Make a physical network connection via ethernet and plug in the power adapter cable. <br />
-Login with the user ```pi```and the password ```raspberry```<br />
+After the login prompt is blinking on the monitor, login with the user ```pi```and the password ```raspberry```<br />
 Be careful the keyboard layout is english **z** instead of **y**. <br />
-Give the command  ```sudo passwd ``` so the password for the user root will be set <br />
+Give the command  ```sudo passwd ``` so the password for the user root can be set <br />
 Change with ```su -``` and the new password to the root user. <br />
 Now change the passord for the user pi with ```passwd pi```.
 
