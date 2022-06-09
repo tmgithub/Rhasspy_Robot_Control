@@ -97,11 +97,11 @@ dann in das Verzeichnis wechseln <br />
    
 den folgenden Befehl ausführen : <br />
 
->```git clone https://gitlab.alogis.com/tm/pialarm.git```<br />
+>```git clone https://github.com/tmgithub/Rhasspy_Robot_Control.git```<br />
  
 in das neu erzeugte Verzeichnis mit <br />
 
->```cd /usr/local/pialarm/pideps``` <br />
+>```cd /usr/local/intent``` <br />
    
 wechseln. <br />
    
@@ -109,29 +109,25 @@ wechseln. <br />
 **7.** Installation der Pythonlibrarys mit pip3: <br />
 >```pip3 install paho-mqtt``` Installiert die mosquitto tools für den MQtt<br />
 >```pip3 install gpiozero``` Installiert den Zugriff auf das GPIO des Raspberry's<br />
->```pip3 install adafruit-circuitpython-ina219``` Library für den Zugriff auf die Strommesshardware<br />
->```pip3 install python-pushover``` Installiert tools um den Pushover-Server zu erreichen<br />
->```pip3 install pysnmp``` Installiert snmp tools<br />
->```pip3 install bluepy.btle``` Installiert bluetooth Librarys<br />
 
 
 **10.** Programm als Dienst anlegen der beim booten gestartet wird : <br />
-> In dem Verzeichnis ```/usr/local/pialarm```den Befehl ```python3 -m venv /usr/local/pialarm``` ausführen.<br />
+> In dem Verzeichnis ```/usr/local/intent```den Befehl ```python3 -m venv /usr/local/intent``` ausführen.<br />
 > Damit wird das virtuelle Environment angelegt.<br />
-> In dem Verzeichnis ```/usr/lib/systemd/system```wird die Datei ```pialarm.service``` angelegt oder kopiert. <br />
+> In dem Verzeichnis ```/usr/lib/systemd/system```wird die Datei ```reaktion.service``` angelegt oder kopiert. <br />
 > Dann wird dem Daemon mit ```systemctl daemon-reload``` die neue Datei bekannt gemacht.<br /><br />
-> Mit ```systemctl enable pialarm.service``` wird die Datei zum Ausführen während des Systemstarts eingerichtet.<br />
-> ```systemctl start pialarm.service``` startet den Service manuell. Das Stoppen ist dann mit ```systemctl stop pialarm.service``` möglich.<br />
-> Man kann mit ```systemctl status pialarm.service``` abrufen ob das Programm läuft.<br /><br />
-> Der Inhalt von ```pialarm.service``` :<br /><br />
+> Mit ```systemctl enable reaktion.service``` wird die Datei zum Ausführen während des Systemstarts eingerichtet.<br />
+> ```systemctl start reaktion.service``` startet den Service manuell. Das Stoppen ist dann mit ```systemctl stop reaktion.service``` möglich.<br />
+> Man kann mit ```systemctl status reaktion.service``` abrufen ob das Programm läuft.<br /><br />
+> Der Inhalt von ```reaktion.service``` :<br /><br />
 >>[Unit]<br />
->>Description=Pialarm   ```Beschreibung des Services```<br />
+>>Description=Robot_Control   ```Beschreibung des Services```<br />
 >>After=network.target<br />
 >>[Service]<br />
 >>Type=idle ```Der Typ "idle" stellt sicher, dass das Kommando erst ausgeführt wird, wenn alle anderen Dienste geladen sind.``` <br />
 >>Restart=on-failure<br />
 >>User=root<br />
->>ExecStart=/bin/bash -c 'cd /usr/local/pialarm/ && source bin/activate && python3 pialarm_main.py' ```erst wird ein cd in das Verzeichnis ausgeführt```<br />
+>>ExecStart=/bin/bash -c 'cd /usr/local/intent/ && source bin/activate && python3 reaktion.py' ```erst wird ein cd in das Verzeichnis ausgeführt```<br />
 >>```Dann wird die virtuelle Umgebung gestartet und dann das Programm selbst``` <br />
 >>[Install]<br />
 >>WantedBy=multi-user.target<br />
@@ -140,7 +136,7 @@ wechseln. <br />
 ## Repository <a name="Repository"></a>
 
 Repository akualisieren :<br />
-In dem Verzeichnis /usr/local/pialarm <br />
+In dem Verzeichnis /usr/local/intent <br />
 folgende Kommandos eingeben :<br />
 
 ```git add -A```<br />
