@@ -68,7 +68,7 @@ Als root User das Passwort des Users Pi mit ```passwd pi``` ebenfalls anpassen
 
 <p align="left"><img src="Bilder/raspi-config_hostname.jpeg" width="150"></p><br />
 
-> Der hostname wird mit dem tool auf pialarm gesetzt. <br />
+> Der hostname wird mit dem tool auf rhasspy gesetzt. <br />
 > Die Konfigdatei für ssh wird mit ```vi /etc/ssh/sshd_config``` angepasst.<br />
 Der Wert ```PermitRootLogin``` wird auf yes gesetzt.<br />
 
