@@ -45,7 +45,9 @@ Hardware to buy:<br />
 * ReSpeaker 6 Mic Array for Raspberry Pi<br /><p align="left"><img src="Bilder/respeaker.jpg" width="250"></p><br />
 * PCA9685 16 Kanal 12 Bit PWM Servo driver for Raspberry Pi<br /><p align="left"><img src="Bilder/pcf.jpg" width="250"></p><br />
 * Real Time Clock RTC DS3231 I2C<br /><p align="left"><img src="Bilder/ds3231.jpg" width="250"></p><br />
-* Case with enough space for the HAT<br /><p align="left"><img src="Bilder/RPI4_CASE_SECURE_01.png" width="250"></p><br /><br />**this is my case**<br />and the selfmade case for the respeaker microphone extension.<br />you can see the **i2c extender** and the **DS3231** plugged into the **i2c extender**<br /><p align="left"><img src="Bilder/my_case.jpg" width="250"></p><br />
+* Case with enough space for the HAT<br /><p align="left"><img src="Bilder/RPI4_CASE_SECURE_01.png" width="250"></p><br /><br />
+* **this is my case**<br />and the selfmade case for the respeaker microphone extension.<br />you can see the **i2c extender** and the **DS3231** plugged into the **i2c extender**<br /><p align="left"><img src="Bilder/my_case.jpg" width="250"></p><br />
+* This is the RPi zero with i2c HAT and i2c ethernet SPI interface<br /><p align="left"><img src="Bilder/RPI_zero.jpg" width="250"></p><br />
 <br />
 
 	
