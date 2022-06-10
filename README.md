@@ -71,15 +71,13 @@ Hardware to buy:<br />
 
 **5.** install **Docker** <br />
 <br />
-* <pre><code>apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common</pre></code><br />
-* ```**curl -fsSL** https://download.docker.com/linux/debian/gpg | sudo apt-key add -```<br />
-* ```apt-key fingerprint 0EBFCD88```<br />
-* ```echo "deb [arch=armhf signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null```<br />
- <br />
-* apt-get update```<br />
-* ```apt-get install docker-ce docker-ce-cli containerd.io```<br />
-<br />
-* docker run -d -p 12101:12101 --name rhasspy --restart unless-stopped -v "$HOME/.config/rhasspy/profiles:/profiles" -v "/etc/localtime:/etc/localtime:ro" --device /dev/snd:/dev/snd rhasspy/rhasspy --user-profiles /profiles --profile de
+* <pre><code>apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common</pre></code>
+* <pre><code>curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -</pre></code>
+* <pre><code>apt-key fingerprint 0EBFCD88</pre></code>
+* <pre><code>echo "deb [arch=armhf signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null</pre></code>
+* <pre><code>apt-get update</pre></code>
+* <pre><code>apt-get install docker-ce docker-ce-cli containerd.io</pre></code>
+* <pre><code>docker run -d -p 12101:12101 --name rhasspy --restart unless-stopped -v "$HOME/.config/rhasspy/profiles:/profiles" -v "/etc/localtime:/etc/localtime:ro" --device /dev/snd:/dev/snd rhasspy/rhasspy --user-profiles /profiles --profile de</pre></code>
 
 **Now the rhasspy needs some configurations**
 
