@@ -67,22 +67,20 @@ Hardware to buy:<br />
 
 **4.**  Login via ssh ```ssh -lroot 192.168.XX.XX```  <br />
 * Then type in the commands apt update to update the repository cache and start to install software:<br />
-* apt-get install python3-pip git mosquitto mosquitto-clients i2c-tools <br />
-<br />**5.** install **Docker** <br />
+* apt-get install python3-pip git mosquitto mosquitto-clients i2c-tools
+
+**5.** install **Docker** <br />
 <br />
-* ```**apt-get install** apt-transport-https ca-certificates curl gnupg-agent software-properties-common```<br />
- <br />
+* <pre><code>apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common</pre></code><br />
 * ```**curl -fsSL** https://download.docker.com/linux/debian/gpg | sudo apt-key add -```<br />
-> <br />
-> ```**apt-key** fingerprint 0EBFCD88```<br />
-> <br />
-> ```**echo** "deb [arch=armhf signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null```<br />
-> <br />
-> ```apt-get update```<br />
-> ```apt-get install docker-ce docker-ce-cli containerd.io```<br />
-> <br />
-> docker run -d -p 12101:12101 --name rhasspy --restart unless-stopped -v "$HOME/.config/rhasspy/profiles:/profiles" -v "/etc/localtime:/etc/localtime:ro" --device /dev/snd:/dev/snd rhasspy/rhasspy --user-profiles /profiles --profile de
-> V
+* ```apt-key fingerprint 0EBFCD88```<br />
+* ```echo "deb [arch=armhf signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null```<br />
+ <br />
+* apt-get update```<br />
+* ```apt-get install docker-ce docker-ce-cli containerd.io```<br />
+<br />
+* docker run -d -p 12101:12101 --name rhasspy --restart unless-stopped -v "$HOME/.config/rhasspy/profiles:/profiles" -v "/etc/localtime:/etc/localtime:ro" --device /dev/snd:/dev/snd rhasspy/rhasspy --user-profiles /profiles --profile de
+
 **Now the rhasspy needs some configurations**
 
 change to the folder  <br />
