@@ -3,11 +3,13 @@
 ## Content
 
 * [General](#General)
+* [Robot Photos](#Robot)
 * [Hardware](#Hardware)
 * [Software](#Software)
 * [Setup](#Setup)
 * [Repository](#Repository)
 * [Code](#Code)
+* [Demo Videos](#Demo)
 
 ## General <a name="General"></a>
     This project controls servo motors of a roboter via offline voice control ( rhasspy ).
@@ -18,16 +20,19 @@
 <br />
 my robot site: https://roboter.mindach.net
 
+## Robot photos(#Robot)
+* this is the head<br /><p align="left"><img src="Bilder/rpi4.jpg" width="250"></p><br />
+
+
 ## Software
 * Raspberryos (opensource)
  <pre><code>https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-lite.img.xz</pre></code><br />
 * rhasspy ( offline voice recognition)
 * eclipse ide<br />
-this is the place i am working with<br />
-<br /><p align="left"><img src="Bilder/eclipse.png" width="600"></p><br />
-<br />
+this is the place i am working with<br /><p align="left"><img src="Bilder/eclipse.png" width="600"></p><br />
+
 **Client Software** <br />
-    * mqtt explorer <br />
+* mqtt explorer <br />
 
 ## Hardware <a name="Hardware"></a>
 Hardware to buy:<br />
@@ -172,7 +177,10 @@ The program reaktion.py will be started  with the following command<br />
     mqtt.on_message = on_message<br />
     mqtt.connect('localhost', 1883)<br />
     mqtt.loop_forever()</code></pre><br />
-
+    
+## Demo Videos <a name="Demo"></a>
+* Some action videos:
+* Hand folding mechanism https://youtube.com/shorts/nNETJs56LOI
 
 
 
