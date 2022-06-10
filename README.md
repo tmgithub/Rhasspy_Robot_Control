@@ -81,24 +81,25 @@ Hardware to buy:<br />
 
 **Now the rhasspy needs some configurations**
 
-change to the folder  <br />
+* change to the folder 
 
->```cd /usr/local```
+* <pre><code>cd /usr/local</pre></code>
    
-type following command : <br />
+* type following command :
 
->```git clone https://github.com/tmgithub/Rhasspy_Robot_Control.git```<br />
+* <pre><code>git clone https://github.com/tmgithub/Rhasspy_Robot_Control.git</pre></code>
  
-cd into the new folder <br />
+* cd into the new folder
 
->```cd /usr/local/intent```. <br />
+* <pre><code>cd /usr/local/intent. </pre></code>
    
 
 **5.** Install the pythonlibrarys with pip3: <br />
->```pip3 install paho-mqtt``` install the mosquitto tools for the MQtt<br />
->```pip3 install gpiozero``` install the connection to GPIO of the Raspberry<br />
-
-
+* install the mosquitto tools for the MQtt
+* <pre><code>pip3 install paho-mqtt</pre></code> 
+* install the connection to GPIO of the Raspberry
+* <pre><code>pip3 install gpiozero</pre></code>
+<br />
 **6.** Program as a service start at boottime : <br />
 > Change to the folder ```/usr/local/intent``` and execute the command ```python3 -m venv /usr/local/intent```.<br />
 > The virtual environment would established.<br />
