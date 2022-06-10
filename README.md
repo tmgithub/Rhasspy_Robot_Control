@@ -25,7 +25,8 @@ my robot site: https://roboter.mindach.net
 * eclipse ide<br />
 this is the place i am working with<br />
 <br /><p align="left"><img src="Bilder/eclipse.png" width="600"></p><br />
-<br />**Client Software** <br />
+<br />
+**Client Software** <br />
     * mqtt explorer <br />
 
 ## Hardware <a name="Hardware"></a>
@@ -34,9 +35,7 @@ Hardware to buy:<br />
 * ReSpeaker 6 Mic Array for Raspberry Pi<br /><p align="left"><img src="Bilder/respeaker.jpg" width="250"></p><br />
 * PCA9685 16 Kanal 12 Bit PWM Servo driver for Raspberry Pi<br /><p align="left"><img src="Bilder/pcf.jpg" width="250"></p><br />
 * Real Time Clock RTC DS3231 I2C<br /><p align="left"><img src="Bilder/ds3231.jpg" width="250"></p><br />
-* Case with enough space for the HAT<br /><p align="left"><img src="Bilder/RPI4_CASE_SECURE_01.png" width="250"></p><br />
-<br />
-<br />**this is my case**<br />and the selfmade case for the respeaker microphone extension.<br />you can see the **i2c extender** and the **DS3231** plugged into the **i2c extender**<br /><p align="left"><img src="Bilder/my_case.jpg" width="250"></p><br />
+* Case with enough space for the HAT<br /><p align="left"><img src="Bilder/RPI4_CASE_SECURE_01.png" width="250"></p><br /><br />**this is my case**<br />and the selfmade case for the respeaker microphone extension.<br />you can see the **i2c extender** and the **DS3231** plugged into the **i2c extender**<br /><p align="left"><img src="Bilder/my_case.jpg" width="250"></p><br />
 <br />
 
 	
@@ -55,15 +54,10 @@ Hardware to buy:<br />
 - Execute ```su -``` and the new password to the root user. <br />
 - Now change the passord for the user **pi** with ```passwd pi```.
 
-**2.**  Set-up with the command **raspi-config** . <br />
-<p align="left"><img src="Bilder/raspi-config1.jpeg" width="250"></p><br />
-- As root user with the command **raspi-config** <br />
-- under menu item **3 Interface Options** activate **P2 SSH** and **P5 I2C** .<br />
-<br />
-<p align="left"><img src="Bilder/raspi-config_ssh.jpeg" width="250"></p><br />
-- And activate the **localisation** under menu item **5 L1 Locale und L2 Timezone und L3 Keyboard** . <br />
-<br />
-<p align="left"><img src="Bilder/raspi-config_hostname.jpeg" width="250"></p><br />
+**2.**  Set-up with the command **raspi-config** . <br /><p align="left"><img src="Bilder/raspi-config1.jpeg" width="250"></p><br />
+* As root user with the command **raspi-config** <br />
+* under menu item **3 Interface Options** activate **P2 SSH** and **P5 I2C** .<br /><p align="left"><img src="Bilder/raspi-config_ssh.jpeg" width="250"></p><br />
+* And activate the **localisation** under menu item **5 L1 Locale und L2 Timezone und L3 Keyboard** . <br /><p align="left"><img src="Bilder/raspi-config_hostname.jpeg" width="250"></p><br />
 - I changed the hostname with this tool to rhasspy. <br />
 - Now i adjusted the config file for ssh ```vi /etc/ssh/sshd_config```.<br />
 - Change the line with ```PermitRootLogin``` to ```yes```.<br />
@@ -72,15 +66,13 @@ Hardware to buy:<br />
 **3.**  Make a **new start** of the RPI ( reboot or init6 on the commandline )
 
 **4.**  Login via ssh ```ssh -lroot 192.168.XX.XX```  <br />
-> Then type in the commands apt update to update the repository cache and start to install software:<br />
-> <br />
-> apt-get install python3-pip git mosquitto mosquitto-clients i2c-tools <br />
+* Then type in the commands apt update to update the repository cache and start to install software:<br />
+* apt-get install python3-pip git mosquitto mosquitto-clients i2c-tools <br />
+<br />**5.** install **Docker** <br />
 <br />
-**5.** install **Docker** <br />
-<br />
-> ```**apt-get install** apt-transport-https ca-certificates curl gnupg-agent software-properties-common```<br />
-> <br />
-> ```**curl -fsSL** https://download.docker.com/linux/debian/gpg | sudo apt-key add -```<br />
+* ```**apt-get install** apt-transport-https ca-certificates curl gnupg-agent software-properties-common```<br />
+ <br />
+* ```**curl -fsSL** https://download.docker.com/linux/debian/gpg | sudo apt-key add -```<br />
 > <br />
 > ```**apt-key** fingerprint 0EBFCD88```<br />
 > <br />
