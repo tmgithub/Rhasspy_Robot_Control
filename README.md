@@ -26,7 +26,11 @@ my robot site: https://roboter.mindach.net
 
 
 ## Robot photos <a name="Robot"></a>
-* this is the head. It is my development environment for the voice recognition<br /><p align="left"><img src="Bilder/Head.jpg" width="250"></p><br />
+* this is the head.<br />
+It is my development environment for the voice recognition<br />
+You can see the case with the white plate and the holes for the respeaker mikrophones<br />
+In the head ther are 8 Servos. 4 for the eyelid and eye movement<br />
+One servo for the jaw. Three servos for rotate,nick and tilt the head<br /><p align="left"><img src="Bilder/Head.jpg" width="250"></p><br />
 
 
 ## Software
