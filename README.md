@@ -12,16 +12,21 @@
 * [Demo Videos](#Demo)
 
 ## General <a name="General"></a>
+    The project is under permanent development so this readme is only a snapshot
+    
     This project controls servo motors of a roboter via offline voice control ( rhasspy ).
     It is divided into two parts.
     The main part controls the head.
+    
     The other parts are controlling the modules:
     for example the left arm ( it will be realized by a Raspberry pi Zero)
+   
 <br />
 my robot site: https://roboter.mindach.net
 
-## Robot photos(#Robot)
-* this is the head<br /><p align="left"><img src="Bilder/rpi4.jpg" width="250"></p><br />
+
+## Robot photos <a name="Robot"></a>
+* this is the head. It is my development environment for the voice recognition<br /><p align="left"><img src="Bilder/Head.jpg" width="250"></p><br />
 
 
 ## Software
