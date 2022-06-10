@@ -78,8 +78,7 @@ Hardware to buy:<br />
 * <pre><code>apt-get update</pre></code>
 * <pre><code>apt-get install docker-ce docker-ce-cli containerd.io</pre></code>
 * <pre><code>docker run -d -p 12101:12101 --name rhasspy --restart unless-stopped -v "$HOME/.config/rhasspy/profiles:/profiles" -v "/etc/localtime:/etc/localtime:ro" --device /dev/snd:/dev/snd rhasspy/rhasspy --user-profiles /profiles --profile de</pre></code>
-
-**Now the rhasspy needs some configurations**
+**Now the rhasspy needs some configurations**<br />
 
 * change to the folder 
 
@@ -99,58 +98,41 @@ Hardware to buy:<br />
 * <pre><code>pip3 install paho-mqtt</pre></code> 
 * install the connection to GPIO of the Raspberry
 * <pre><code>pip3 install gpiozero</pre></code>
-<br />
+
+
 **6.** Program as a service start at boottime : <br />
-> Change to the folder ```/usr/local/intent``` and execute the command ```python3 -m venv /usr/local/intent```.<br />
-> The virtual environment would established.<br />
-> In the folder ```/usr/lib/systemd/system``` the file ```reaktion.service``` is copied or generated. <br />
-> Tell the daemon with ```systemctl daemon-reload``` about the new file.<br /><br />
-> with ```systemctl enable reaktion.service``` the file is ready to be used while system starts.<br />
-> ```systemctl start reaktion.service``` will start the service manual. The stopping is with the command ```systemctl stop reaktion.service``` possible.<br />
-> You can show the status by typing ```systemctl status reaktion.service```.<br /><br />
-> The content of the file```reaktion.service``` :<br /><br />
->>[Unit]<br />
->>Description=Robot_Control   ```Descripotion of the Service```<br />
->>After=network.target<br />
->>[Service]<br />
->>Type=idle ```The type idle means the command starts when all other processes are finished.``` <br />
->>Restart=on-failure<br />
->>User=root<br />
->>ExecStart=/bin/bash -c 'cd /usr/local/intent/ && source bin/activate && python3 reaktion.py' ```first cd to the folder```<br />
->>```then the virual env is started``` <br />
->>[Install]<br />
->>WantedBy=multi-user.target<br />
+* Change to the folder ```/usr/local/intent``` and execute the command ```python3 -m venv /usr/local/intent```.
+* The virtual environment would established.<br />
+* In the folder ```/usr/lib/systemd/system``` the file ```reaktion.service``` is copied or generated. <br />
+* Tell the daemon with ```systemctl daemon-reload``` about the new file.<br /><br />
+* with ```systemctl enable reaktion.service``` the file is ready to be used while system starts.<br />
+* ```systemctl start reaktion.service``` will start the service manual. The stopping is with the command ```systemctl stop reaktion.service``` possible.<br />
+* You can show the status by typing ```systemctl status reaktion.service```.<br /><br />
+* The content of the file```reaktion.service``` :<br /><br />
+<pre><code>[Unit]<br />
+Description=Robot_Control   #Description of the Service<br />
+After=network.target<br />
+[Service]<br />
+Type=idle *The type idle means the command starts when all other processes are finished. <br />
+Restart=on-failure<br />
+User=root<br />
+ExecStart=/bin/bash -c 'cd /usr/local/intent/ && source bin/activate && python3 reaktion.py' #first cd to the folder<br />
+#then the virual env is started<br />
+[Install]<br />
+WantedBy=multi-user.target</pre></code><br />
 
 
 **7.** config Rhasspy <br />
 
-> listening to mqtt <br />
-> <p align="left"><img src="Bilder/Rhasspy_MQTT.png" width="350"></p><br />
-> <br />
-> i use pyaudio for recording the voice<br />
-> <br />
-> <p align="left"><img src="Bilder/Rhasspy_audio_recording.png" width="350"></p><br />
-> <br />
-> my roboter is named kai<br />
-> i use the wakeword engine **Rhasspy Raven** <br />
-> <br />
-> <p align="left"><img src="Bilder/Rhasspy_wake_word.png" width="350"></p><br />
-> <br />
-> speech to text via kaldi <br />
-> <br />
-> <p align="left"><img src="Bilder/Rhasspy_speech_to_text.png" width="350"></p><br />
-> <br />
-> intent recognition via Fsticuffs <br />
-> <br />
-> <p align="left"><img src="Bilder/Rhasspy_intent_recognition.png" width="350"></p><br />
-> <br />
-> all words were send to mqtt so other programs can listen to them <br />
-> <br />
-> <p align="left"><img src="Bilder/Rhasspy_text_to_Speech.png" width="350"></p><br />
-> <br />
-> the sound is played by aplay ( for example error sound etc.) <br />
-> <br />
-> <p align="left"><img src="Bilder/rhasspy_audio_play.png" width="350"></p><br />
+* listening to mqtt <br /><p align="left"><img src="Bilder/Rhasspy_MQTT.png" width="350"></p><br />
+* i use pyaudio for recording the voice<br /><p align="left"><img src="Bilder/Rhasspy_audio_recording.png" width="350"></p><br />
+* my roboter is named kai<br />
+* i use the wakeword engine **Rhasspy Raven** <br /><p align="left"><img src="Bilder/Rhasspy_wake_word.png" width="350"></p><br />
+
+* speech to text via kaldi <br /><p align="left"><img src="Bilder/Rhasspy_speech_to_text.png" width="350"></p><br />
+* intent recognition via Fsticuffs <br /)<p align="left"><img src="Bilder/Rhasspy_intent_recognition.png" width="350"></p><br />
+* all words were send to mqtt so other programs can listen to them <br /><p align="left"><img src="Bilder/Rhasspy_text_to_Speech.png" width="350"></p><br />
+* the sound is played by aplay ( for example error sound etc.) <br /><p align="left"><img src="Bilder/rhasspy_audio_play.png" width="350"></p><br />
 
 
 ## Repository <a name="Repository"></a>
