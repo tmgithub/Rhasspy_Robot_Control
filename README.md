@@ -193,6 +193,7 @@ The program reaktion.py will be started  with the following command<br />
 * Some action videos:
 * Hand folding mechanism https://youtube.com/shorts/nNETJs56LOI
 * the important finger is working: https://youtube.com/shorts/kYLa1G0reqI
+* shows the complete sequence for the working hand with voice: https://youtu.be/E_8O2fgUSVM
 
 
 
