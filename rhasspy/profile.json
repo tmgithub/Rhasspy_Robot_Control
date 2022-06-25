@@ -1,0 +1,79 @@
+{
+    "dialogue": {
+        "system": "rhasspy"
+    },
+    "intent": {
+        "fsticuffs": {
+            "fuzzy": false
+        },
+        "system": "fsticuffs"
+    },
+    "microphone": {
+        "pyaudio": {
+            "device": "1"
+        },
+        "system": "pyaudio"
+    },
+    "mqtt": {
+        "enabled": "true",
+        "host": "192.168.5.71",
+        "site_id": "Kai"
+    },
+    "sounds": {
+        "aplay": {
+            "device": "default:CARD=seeed8micvoicec"
+        },
+        "system": "aplay"
+    },
+    "speech_to_text": {
+        "kaldi": {
+            "unknown_token": "Kenne ich nicht"
+        },
+        "system": "kaldi"
+    },
+    "text_to_speech": {
+        "espeak": {
+            "voice": "de"
+        },
+        "larynx": {
+            "default_voice": "rebecca_braunert_plunkett",
+            "vocoder": "vctk_medium"
+        },
+        "system": "hermes"
+    },
+    "wake": {
+        "raven": {
+            "keywords": {
+                "computer1": {
+                    "enabled": true
+                },
+                "jarvis": {
+                    "enabled": true
+                },
+                "kai_hm1": {
+                    "enabled": true
+                },
+                "kai_hm2": {
+                    "enabled": true
+                },
+                "kai_tm1": {
+                    "enabled": true
+                },
+                "kai_tm2": {
+                    "enabled": true
+                },
+                "kai_tm3_hey": {
+                    "enabled": true
+                },
+                "kay_keiner_hoertzu": {
+                    "enabled": false
+                },
+                "kay_tm4_hey": {
+                    "enabled": false
+                }
+            },
+            "probability_threshold": "0.49"
+        },
+        "system": "raven"
+    }
+}
