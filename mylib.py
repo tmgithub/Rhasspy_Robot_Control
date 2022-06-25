@@ -396,9 +396,8 @@ def sound_initialize():       # im tmp Verzeichnis die entsprechende asound lese
     subprocess.run(syssentence,shell=True,stdout=subprocess.DEVNULL)
     
 def publish(topic,msg):
-
      #result=mqttpublish.single('hermes/tts/say', payload=json.dumps({'text': msg,'siteId': 'default', 'modelId': 'default'}))
-     print("Msg: mylib.py publish()",msg," Topic: ",topic)
+     #print("Msg: mylib.py publish()",msg," Topic: ",topic)
 
      result=mqttpublish.single(topic,payload=msg )
      #print("Ergebnis: ",result)

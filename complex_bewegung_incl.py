@@ -29,9 +29,10 @@ import globs
 
 import threading
 
-def zeigen(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp):
+def zeigen(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,myslots,intentnametmp,subanztmp):
         print("Aktion zeigen:  complex_bewegung_incl.py zeigen() ")
         print("KT: ",kttmp,"SUBKT: ",subkttmp,"Seite: ",seitetmp,"Speed: ",speedtmp,"wenig: ",wenigtmp)
+        print(" ")
 # Abfrage mit welcher Geschwindigkeit sich das Körperteil bewegen soll       
         if speedtmp == 'slow' or speedtmp == 'SLOW':
            speed_slow = 'True'
@@ -50,10 +51,62 @@ def zeigen(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp):
             sprache="Ich soll beide Fäuste "+speedtmp + " ballen."
             MY.sprachausgabe('"%s"' %sprache)
             
+            
         elif subkttmp == 'Faust' and seitetmp[0:2] =="li":               # Der Kopf wird angesprochen
             sprache="Ich soll "+seitetmp+" "+speedtmp +" eine "+subkttmp+" machen. "
             MY.sprachausgabe('"%s"' %sprache)
             
+            kt_payload=json.dumps({'intent':intentnametmp,'slots':myslots,'siteId': 'default', 'modelId': 'default'})
+
+            MY.publish("hermes/linkerArm/zeigefinger",kt_payload)
+            
+        elif subkttmp == 'Zeigefinger' and seitetmp[0:2] =="li":               # Der Kopf wird angesprochen
+            sprache="Ich soll meinen "+seitetmp+" "+speedtmp +subkttmp+" zeigen. "
+            MY.sprachausgabe('"%s"' %sprache)
+            #import pdb
+            #pdb.set_trace()           
+            kt_payload=json.dumps({'intent':intentnametmp,'slots':myslots,'siteId': 'default', 'modelId': 'default'})
+
+            MY.publish("hermes/linkerArm/zeigefinger",kt_payload)
+            
+        elif subkttmp == 'Mittelfinger' and seitetmp[0:2] =="li":               # Der Kopf wird angesprochen
+            sprache="Ich soll meinen "+seitetmp+" "+speedtmp +subkttmp+" zeigen. "
+            MY.sprachausgabe('"%s"' %sprache)
+            #import pdb
+            #pdb.set_trace()           
+            kt_payload=json.dumps({'intent':intentnametmp,'slots':myslots,'siteId': 'default', 'modelId': 'default'})
+
+            MY.publish("hermes/linkerArm/mittelfinger",kt_payload)   
+            
+        elif subkttmp == 'Ringfinger' and seitetmp[0:2] =="li":               # Der Kopf wird angesprochen
+            sprache="Ich soll meinen "+seitetmp+" "+speedtmp +subkttmp+" zeigen. "
+            MY.sprachausgabe('"%s"' %sprache)
+            #import pdb
+            #pdb.set_trace()           
+            kt_payload=json.dumps({'intent':intentnametmp,'slots':myslots,'siteId': 'default', 'modelId': 'default'})
+
+            MY.publish("hermes/linkerArm/ringfinger",kt_payload)  
+            
+            
+        elif subkttmp == 'kleinen finger' and seitetmp[0:2] =="li":               # Der Kopf wird angesprochen
+            sprache="Ich soll meinen "+seitetmp+" "+speedtmp +subkttmp+" zeigen. "
+            MY.sprachausgabe('"%s"' %sprache)
+            #import pdb
+            #pdb.set_trace()           
+            kt_payload=json.dumps({'intent':intentnametmp,'slots':myslots,'siteId': 'default', 'modelId': 'default'})
+
+            MY.publish("hermes/linkerArm/kleinenfinger",kt_payload)                      
+                     
+            
+        elif subkttmp == 'Finger' and seitetmp[0:2] =="li":  
+            print("im complex_bewegung.py zeigen()")              
+            sprache="Ich soll "+seitetmp+" "+speedtmp +str(subanztmp)+" "+subkttmp+" zeigen. "
+            MY.sprachausgabe('"%s"' %sprache)
+            #import pdb
+            #pdb.set_trace()           
+            kt_payload=json.dumps({'intent':intentnametmp,'slots':myslots,'siteId': 'default', 'modelId': 'default'})
+
+            MY.publish("hermes/linkerArm/finger",kt_payload)            
             
         elif subkttmp == 'Faust' and seitetmp[0:2] =="re":               # Der Kopf wird angesprochen
             sprache="Ich soll "+seitetmp+" "+speedtmp +" eine "+subkttmp+" machen. "

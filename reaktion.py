@@ -69,6 +69,8 @@ def on_message(client, userdata, msg):
     #print("SLOW: ",GL_SLOW)
     #print("LINKS: ",GL_Seite_LINKS)
     #print("ABIT: ",GL_ABIT) 
+    #print("MSG topic: ",msg.topic)
+    #print(" ")
     
     if msg.topic[ :15] == 'hermes/hotword/':
        htword = str(HotwordDetected.get_wakeword_id(msg.topic))
@@ -88,7 +90,8 @@ def on_message(client, userdata, msg):
          pixel_ring.think()
          print("Speaker: ",globs.speaker)
     elif msg.topic[ :14] == 'hermes/intent/':
-
+         #print("Mal sehen: ",json_data)
+         #print(" ")
        #slots = parse_slots(json_data)
          kt=""
          subkt=""
@@ -106,6 +109,7 @@ def on_message(client, userdata, msg):
          globals()['GL_WET']=""
          globals()['GL_ORT']=""
          globals()['GL_SUBWET']=""
+         globals()['GL_SUBANZ']=""
          
          allglobals = globals()
          #print(globals())
@@ -118,7 +122,8 @@ def on_message(client, userdata, msg):
                  globals()[delslotval] = ""
 
          myslots = json_data["slots"]
-         #print("Myslots: ",myslots)
+         print("Was geht ab ? ")
+         print("Myslots: ",myslots)
 
          
          for slot in json_data["slots"]:
@@ -152,6 +157,9 @@ def on_message(client, userdata, msg):
              #print(" ")
          #print("Slots: ", slots)
          intentname = json_data['intent']['intentName']
+         intentnametmp = json_data['intent']
+         print("tintent: ",intentnametmp)
+         print(" ")
          print("Intentname: ",intentname)
        
          #import pdb; pdb.set_trace()
@@ -163,6 +171,7 @@ def on_message(client, userdata, msg):
          wet = globals()['GL_WET']
          ort = globals()['GL_ORT']
          subwet = globals()['GL_SUBWET']
+         subanz = globals()['GL_SUBANZ']
 
          #print("kt: ",kt)
 
@@ -173,14 +182,14 @@ def on_message(client, userdata, msg):
              #print("Ktemp: ",ktmp)
              print(" ")
            
-             aktion(kt,subkt,seite,speed,wenig,intentname,st,vw,subvw,wet,ort,subwet)
+             aktion(kt,subkt,seite,speed,wenig,intentname,st,vw,subvw,wet,ort,subwet,myslots,intentnametmp,subanz)
          except Exception as e:
              print(e)
     else:
          pixel_ring.listen()
 
 
-def aktion(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,intenttmp,sttmp,vwtmp,subvwtmp,wettmp,orttmp,subwettmp):
+def aktion(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,intenttmp,sttmp,vwtmp,subvwtmp,wettmp,orttmp,subwettmp,myslots,intentnametmp,subanztmp):
     print(" ")
     print("IM aktion Modul: reaktion.py|",intenttmp)
 # Einzelne Bewegungen    
@@ -214,9 +223,10 @@ def aktion(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,intenttmp,sttmp,vwtmp,subvw
         
 # komplexe Bewegungen
     elif intenttmp == 'zeigen':
-         print("drehen: reaktion.py aktion()") 
-         print("KT: ",kttmp,"SUBKT: ",subkttmp,"Seite: ",seitetmp,"Speed: ",speedtmp,"wenig: ",wenigtmp) 
-         CBEW.zeigen(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp)
+         print("zeigen: reaktion.py aktion()") 
+         print("KT: ",kttmp,"SUBKT: ",subkttmp,"Seite: ",seitetmp,"Speed: ",speedtmp,"wenig: ",wenigtmp)
+         print(" ") 
+         CBEW.zeigen(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,myslots,intentnametmp,subanztmp)
                
     elif intenttmp == 'bewegung':
         print("Aktion bewegung: ")
