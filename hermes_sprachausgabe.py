@@ -7,25 +7,13 @@ import json
 #import glob
 import subprocess
 
-#import time
+
 from datetime import datetime, timedelta
-#import calendar
+
 import sys
 
 import threading
 
-# Globale Variablen und Konstanten
-#import globals
-#import constant as co
-
-#LED Ansteuerung
-#from gpiozero import LED
-#from pixel_ring import pixel_ring
-
-
-#Eigene Includes laden
-#import Servo_Include as SI
-#import mylib as MY
 
 def on_connect(client, userdata, flags, rc): ## Mit dem mosquitto verbinden und intent und hotword subscriben
     print('hermes Sprachausgabe Connected at ',datetime.now()) 
@@ -44,8 +32,8 @@ def on_message(client, userdata, msg):
 def sprachausgabe(satz):
     print("hermes_sprachausgabe.py sprachausgabe(): ",satz)
 
-    syssentence = "/usr/bin/espeak-ng -d plughw:1,0 -v mb-de6 -k 20 -p 60 -s 140 -a 180 -w /tmp/soundout.wav " + satz
-    sysplay = "/usr/bin/aplay -q -D plughw:1,0 /tmp/soundout.wav"
+    syssentence = "/usr/bin/espeak-ng -d plughw:0,0 -v mb-de6 -k 20 -p 60 -s 140 -a 180 -w /tmp/soundout.wav " + satz
+    sysplay = "/usr/bin/aplay -q -D plughw:0,0 /tmp/soundout.wav"
 
     subprocess.run(syssentence,shell=True,stdout=subprocess.DEVNULL)
     subprocess.run(sysplay,shell=True,stdout=subprocess.DEVNULL)

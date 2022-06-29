@@ -33,7 +33,7 @@ from rhasspyhermes.wake import HotwordDetected
 import Servo_Include as SI
 import mylib as MY
 import smalltalk_incl as SM
-import uhrzeit_incl as UHR
+import uhrzeit_incl as UHZ
 import single_bewegung_incl as SBEW
 import complex_bewegung_incl as CBEW
 import augen as AUGE
@@ -110,6 +110,8 @@ def on_message(client, userdata, msg):
          globals()['GL_ORT']=""
          globals()['GL_SUBWET']=""
          globals()['GL_SUBANZ']=""
+         globals()['GL_DATUM']=""
+         globals()['GL_TAGESWERT']=""
          
          allglobals = globals()
          #print(globals())
@@ -172,8 +174,12 @@ def on_message(client, userdata, msg):
          ort = globals()['GL_ORT']
          subwet = globals()['GL_SUBWET']
          subanz = globals()['GL_SUBANZ']
+         dat = globals()['GL_DATUM']
+         tageswert = globals()['GL_TAGESWERT']
 
          #print("kt: ",kt)
+         print("Nach Globals Datum: ",dat,"Tageswert: ",tageswert)
+         print(" ")
 
 
          #    ktmp=placechange({0: str(list(slots.keys())[0]), 1: str(list(slots.keys())[1]), 2: str(list(slots.keys())[2]),3: str(list(slots.keys())[3])},slots)
@@ -182,14 +188,14 @@ def on_message(client, userdata, msg):
              #print("Ktemp: ",ktmp)
              print(" ")
            
-             aktion(kt,subkt,seite,speed,wenig,intentname,st,vw,subvw,wet,ort,subwet,myslots,intentnametmp,subanz)
+             aktion(kt,subkt,seite,speed,wenig,intentname,st,vw,subvw,wet,ort,subwet,myslots,intentnametmp,subanz,dat,tageswert)
          except Exception as e:
              print(e)
     else:
          pixel_ring.listen()
 
 
-def aktion(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,intenttmp,sttmp,vwtmp,subvwtmp,wettmp,orttmp,subwettmp,myslots,intentnametmp,subanztmp):
+def aktion(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,intenttmp,sttmp,vwtmp,subvwtmp,wettmp,orttmp,subwettmp,myslots,intentnametmp,subanztmp,dat,tageswert):
     print(" ")
     print("IM aktion Modul: reaktion.py|",intenttmp)
 # Einzelne Bewegungen    
@@ -245,8 +251,10 @@ def aktion(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,intenttmp,sttmp,vwtmp,subvw
         SM.sprueche(sttmp,vwtmp,subvwtmp)
                 
     elif intenttmp == 'Uhrzeit':
-        print("Hier geht dier Uhrzeit los: in reaktion.py")
-        UHR.uhrzeit(wert1,wert1_value,wert2,wert2_value)
+        print("Hier geht die Uhrzeit los: in reaktion.py")
+        print(" ")
+        print("Datum: ",dat,"Tageswert: ",tageswert)
+        UHZ.uhrz(dat,tageswert)
         
     elif intenttmp == 'wetter':
         
@@ -293,51 +301,51 @@ def aktion(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,intenttmp,sttmp,vwtmp,subvw
 
             
 
-def parse_slots(wert):
-    '''
-    We extract the slots as a dict
-    '''
-    #data = json.loads(msg) # .payload
-    data = wert 
-    return dict((slot['slotName'], slot['value']) for slot in data['slots'])
+#def parse_slots(wert):
+#    '''
+#    We extract the slots as a dict
+#    '''
+#    #data = json.loads(msg) # .payload
+#    data = wert 
+#    return dict((slot['slotName'], slot['value']) for slot in data['slots'])
 
-def placechange(nameslot,slots):
-    global kt
-    global seite
-    global speed
-    global wenig
-    global real_speed
-    global real_seite
-    global real_wenig
-    kt=""
-    seite=""
-    speed=""
-    wenig=""
-    real_speed=""
-    real_seite=""
-    real_wenig=""
-    print("Place change in reaktion.py plachechange()")
-    try:
-        for i in range(len(nameslot)):
-            #print("Nameslot: ",nameslot[i])
-            if "KT" in nameslot[i]:
-                kt = (slots[nameslot[i]])['value']
-            elif "ReLi" in nameslot[i] or "RECHTS" in nameslot[i] or "LINKS" in nameslot[i]:    
-                seite = (slots[nameslot[i]])['value']
-                #real_seite = (slots[nameslot[i]])['value']
-                #print("Reale Seite: ",seite)
-            elif "SLOW" in nameslot[i]:
-                speed = (slots[nameslot[i]])['value']
-                #real_speed="langsam"
-            elif "WENIG" in nameslot[i]:
-                wenig = (slots[nameslot[i]])['value']
-                #real_wenig="ein wenig"
-        #print("fori: ",kt,seite)
+#def placechange(nameslot,slots):
+#    global kt
+#    global seite
+#    global speed
+#    global wenig
+##    global real_speed
+#    global real_seite
+#    global real_wenig
+#    kt=""
+#    seite=""
+#    speed=""
+#    wenig=""
+#    real_speed=""
+#    real_seite=""
+#    real_wenig=""
+#    print("Place change in reaktion.py plachechange()")
+#    try:
+#        for i in range(len(nameslot)):
+#            #print("Nameslot: ",nameslot[i])
+#            if "KT" in nameslot[i]:
+#                kt = (slots[nameslot[i]])['value']
+#            elif "ReLi" in nameslot[i] or "RECHTS" in nameslot[i] or "LINKS" in nameslot[i]:    
+#                seite = (slots[nameslot[i]])['value']
+#                #real_seite = (slots[nameslot[i]])['value']
+#                #print("Reale Seite: ",seite)
+#            elif "SLOW" in nameslot[i]:
+#                speed = (slots[nameslot[i]])['value']
+#                #real_speed="langsam"
+#            elif "WENIG" in nameslot[i]:
+#                wenig = (slots[nameslot[i]])['value']
+#                #real_wenig="ein wenig"
+#        #print("fori: ",kt,seite)
         
-    except Exception as e:
-        print(e)
-    print("KT: ",kt,"Seite: ",real_seite,"Speed: ",real_speed,wenig,real_speed,real_wenig)
-    return kt,seite,speed,wenig
+#    except Exception as e:
+#        print(e)
+#    print("KT: ",kt,"Seite: ",real_seite,"Speed: ",real_speed,wenig,real_speed,real_wenig)
+#    return kt,seite,speed,wenig
      
 
 
@@ -346,7 +354,9 @@ def placechange(nameslot,slots):
             
 SI.servo_initial()
 
-nline="Spracherkennung eingeschaltet"
+
+#nline="Spracherkennung eingeschaltet auf dem Rechner mit der IP "+MY.extract_ip()[8:].replace(".", " punkt ")
+nline="OK "
 MY.sprachausgabe('"%s"' %nline)
 temp= MY.wohlbefinden()
 #print("SW",temp)
