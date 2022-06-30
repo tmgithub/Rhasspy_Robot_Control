@@ -111,4 +111,7 @@ def zeigen(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,myslots,intentnametmp,suban
         elif subkttmp == 'Faust' and seitetmp[0:2] =="re":               # Der Kopf wird angesprochen
             sprache="Ich soll "+seitetmp+" "+speedtmp +" eine "+subkttmp+" machen. "
             MY.sprachausgabe('"%s"' %sprache)
-        
+            kt_payload=json.dumps({'intent':intentnametmp,'slots':myslots,'siteId': 'default', 'modelId': 'default'})
+            MY.publish("hermes/linkerArm/finger",kt_payload)
+            
+        print("Payload: ",kt_payload)

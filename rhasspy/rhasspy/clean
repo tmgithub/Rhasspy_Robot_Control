@@ -1,13 +1,13 @@
 sortiere{GL_ST:PUTZEN}
-putzen{GL_ST:PUTZEN}
-sauge{GL_ST:PUTZEN}
-wische{GL_ST:PUTZEN}
-aufräumen{GL_ST:PUTZEN}
-saugen{GL_ST:PUTZEN}
-putze{GL_ST:PUTZEN}
-(räume auf){GL_ST:PUTZEN}
-(sauber machen){GL_ST:PUTZEN}
 räume{GL_ST:PUTZEN}
 sauber{GL_ST:PUTZEN}
+wische{GL_ST:PUTZEN}
 wischen{GL_ST:PUTZEN}
+(sauber machen){GL_ST:PUTZEN}
 sortieren{GL_ST:PUTZEN}
+aufräumen{GL_ST:PUTZEN}
+(räume auf){GL_ST:PUTZEN}
+putzen{GL_ST:PUTZEN}
+sauge{GL_ST:PUTZEN}
+saugen{GL_ST:PUTZEN}
+putze{GL_ST:PUTZEN}

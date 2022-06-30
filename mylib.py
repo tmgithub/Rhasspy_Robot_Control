@@ -30,13 +30,13 @@ import socket
 
 
 
-def parse_slots(wert):
-    '''
-    We extract the slots as a dict
-    '''
-    #data = json.loads(msg) # .payload
-    data = wert 
-    return dict((slot['slotName'], slot['value']) for slot in data['slots'])
+#def parse_slots(wert):
+ #   '''
+ #   We extract the slots as a dict
+ #   '''
+ #   #data = json.loads(msg) # .payload
+ #   data = wert 
+ #   return dict((slot['slotName'], slot['value']) for slot in data['slots'])
         
 #def read_speaker():
 #    try:   
@@ -47,35 +47,35 @@ def parse_slots(wert):
 #        speaker = ""
 #    return speaker
     
-def placechange(nameslot,slots):
-   # global kt
-    #global seite
+#def placechange(nameslot,slots):
+#   # global kt
+#    #global seite
     #global speed
     #global wenig
     #global real_speed
     #global real_seite
     #global real_wenig
-    globs.kt=""
-    seite=""
-    speed=""
-    wenig=""
-    real_speed=""
-    real_seite=""
-    real_wenig=""
-
-    for i in range(len(nameslot)):
-        if "KT" in nameslot[i]:
-            kt = (slots[nameslot[i]])['value']
-        elif "ReLi" in nameslot[i]:    
-            seite = (slots[nameslot[i]])['value'][:2]
-            real_seite = (slots[nameslot[i]])['value']
-        elif "SLOW" in nameslot[i]:
-            speed = (slots[nameslot[i]])['value']
-            real_speed="langsam"
-        elif "ABIT" in nameslot[i]:
-            wenig = (slots[nameslot[i]])['value'][:2]
-            real_wenig="ein wenig"
-    return kt,seite,speed,wenig,real_seite,real_speed,real_wenig
+#    globs.kt=""
+#    seite=""
+#    speed=""
+#    wenig=""
+#    real_speed=""
+#    real_seite=""
+#    real_wenig=""
+#
+#    for i in range(len(nameslot)):
+#        if "KT" in nameslot[i]:
+#            kt = (slots[nameslot[i]])['value']
+#        elif "ReLi" in nameslot[i]:    
+#            seite = (slots[nameslot[i]])['value'][:2]
+#            real_seite = (slots[nameslot[i]])['value']
+#        elif "SLOW" in nameslot[i]:
+#            speed = (slots[nameslot[i]])['value']
+#            real_speed="langsam"
+#        elif "ABIT" in nameslot[i]:
+#            wenig = (slots[nameslot[i]])['value'][:2]
+#            real_wenig="ein wenig"
+#    return kt,seite,speed,wenig,real_seite,real_speed,real_wenig
 
 def sprachausgabe(satz):
     pixel_ring.speak()
