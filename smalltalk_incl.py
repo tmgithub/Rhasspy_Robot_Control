@@ -124,6 +124,8 @@ def sprueche(sttmp,vwtmp,subvwtmp):
         
     #print("Hallo hier: ")
     print("Hier geht der Smalltalk weiter: smalltalk_incl.py def sprueche()")
+    print(" ")
+    print("VWTMP: ",vwtmp,"STTMP: ",sttmp,"subvwtmp: ",subvwtmp)
 
     if globs.speaker == "Thomas":
         rest_speaker = "bist Du"
