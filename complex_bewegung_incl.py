@@ -29,9 +29,9 @@ import globs
 
 import threading
 
-def zeigen(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,myslots,intentnametmp,subanztmp):
+def zeigen(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,myslots,intentnametmp,subanztmp,subaktion):
         print("Aktion zeigen:  complex_bewegung_incl.py zeigen() ")
-        print("KT: ",kttmp,"SUBKT: ",subkttmp,"Seite: ",seitetmp,"Speed: ",speedtmp,"wenig: ",wenigtmp)
+        print("KT: ",kttmp,"SUBKT: ",subkttmp,"Seite: ",seitetmp,"Speed: ",speedtmp,"wenig: ",wenigtmp,"aktion: ",subaktion)
         print(" ")
 # Abfrage mit welcher Geschwindigkeit sich das Körperteil bewegen soll       
         if speedtmp == 'slow' or speedtmp == 'SLOW':
@@ -42,6 +42,7 @@ def zeigen(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,myslots,intentnametmp,suban
         #print("Bin im heben modul: ",kttmp,seitetmp,speedtmp,wenigtmp,speed_slow)   
 
         print("Seitetmp: ",seitetmp[0:2])
+        
         if  subkttmp == 'Faust' and seitetmp =="":               # Der Kopf wird angesprochen
             sprache="Ich soll "+speedtmp +" eine "+subkttmp+" machen. Aber ich weiß nicht mit welcher Hand. Bitte wiederhole die Anfrage noch einmal mit der Angabe links oder rechts."
             MY.sprachausgabe('"%s"' %sprache)
@@ -58,7 +59,15 @@ def zeigen(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,myslots,intentnametmp,suban
             
             kt_payload=json.dumps({'intent':intentnametmp,'slots':myslots,'siteId': 'default', 'modelId': 'default'})
 
-            MY.publish("hermes/linkerArm/zeigefinger",kt_payload)
+            MY.publish("hermes/linkerArm/Faust",kt_payload)
+            
+        elif subkttmp == 'Hand' and seitetmp[0:2] =="li":               # Der Kopf wird angesprochen
+            sprache="Ich soll mit der "+seitetmp+" "+subkttmp+" winken. "
+            MY.sprachausgabe('"%s"' %sprache)
+            
+            kt_payload=json.dumps({'intent':intentnametmp,'slots':myslots,'siteId': 'default', 'modelId': 'default'})
+
+            MY.publish("hermes/linkerArm/handwinken",kt_payload)
             
         elif subkttmp == 'Zeigefinger' and seitetmp[0:2] =="li":               # Der Kopf wird angesprochen
             sprache="Ich soll meinen "+seitetmp+" "+speedtmp +subkttmp+" zeigen. "
@@ -88,7 +97,7 @@ def zeigen(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,myslots,intentnametmp,suban
             MY.publish("hermes/linkerArm/ringfinger",kt_payload)  
             
             
-        elif subkttmp == 'kleinen finger' and seitetmp[0:2] =="li":               # Der Kopf wird angesprochen
+        elif subkttmp == 'kleinen Finger' and seitetmp[0:2] =="li":               # Der Kopf wird angesprochen
             sprache="Ich soll meinen "+seitetmp+" "+speedtmp +subkttmp+" zeigen. "
             MY.sprachausgabe('"%s"' %sprache)
             #import pdb

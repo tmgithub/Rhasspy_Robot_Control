@@ -43,6 +43,7 @@ import augen as AUGE
 global apos
 subprocess.Popen(['/usr/bin/python3','/usr/local/intent/hermes_sprachausgabe.py'])
 time.sleep(4)
+
 globs.initialize() ### Globale Variablen initialisieren
 MY.sound_initialize()
 
@@ -112,6 +113,7 @@ def on_message(client, userdata, msg):
          globals()['GL_SUBANZ']=""
          globals()['GL_DATUM']=""
          globals()['GL_TAGESWERT']=""
+         globals()['GL_AKTION']=""
          
          allglobals = globals()
          #print(globals())
@@ -176,6 +178,7 @@ def on_message(client, userdata, msg):
          subanz = globals()['GL_SUBANZ']
          dat = globals()['GL_DATUM']
          tageswert = globals()['GL_TAGESWERT']
+         subaktion = globals()['GL_AKTION']
 
          #print("kt: ",kt)
          print("Nach Globals Datum: ",dat,"Tageswert: ",tageswert)
@@ -188,14 +191,14 @@ def on_message(client, userdata, msg):
              #print("Ktemp: ",ktmp)
              print(" ")
            
-             aktion(kt,subkt,seite,speed,wenig,intentname,st,vw,subvw,wet,ort,subwet,myslots,intentnametmp,subanz,dat,tageswert)
+             aktion(kt,subkt,seite,speed,wenig,intentname,subaktion,st,vw,subvw,wet,ort,subwet,myslots,intentnametmp,subanz,dat,tageswert)
          except Exception as e:
              print(e)
     else:
          pixel_ring.listen()
 
 
-def aktion(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,intenttmp,sttmp,vwtmp,subvwtmp,wettmp,orttmp,subwettmp,myslots,intentnametmp,subanztmp,dat,tageswert):
+def aktion(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,intenttmp,subaktion,sttmp,vwtmp,subvwtmp,wettmp,orttmp,subwettmp,myslots,intentnametmp,subanztmp,dat,tageswert):
     print(" ")
     print("IM aktion Modul: reaktion.py|",intenttmp)
 # Einzelne Bewegungen    
@@ -230,9 +233,9 @@ def aktion(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,intenttmp,sttmp,vwtmp,subvw
 # komplexe Bewegungen
     elif intenttmp == 'zeigen':
          print("zeigen: reaktion.py aktion()") 
-         print("KT: ",kttmp,"SUBKT: ",subkttmp,"Seite: ",seitetmp,"Speed: ",speedtmp,"wenig: ",wenigtmp)
+         print("KT: ",kttmp,"SUBKT: ",subkttmp,"Seite: ",seitetmp,"Speed: ",speedtmp,"wenig: ",wenigtmp,"aktion: ",subaktion)
          print(" ") 
-         CBEW.zeigen(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,myslots,intentnametmp,subanztmp)
+         CBEW.zeigen(kttmp,subkttmp,seitetmp,speedtmp,wenigtmp,myslots,intentnametmp,subanztmp,subaktion)
                
     elif intenttmp == 'bewegung':
         print("Aktion bewegung: ")
