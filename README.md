@@ -104,8 +104,9 @@ Hardware to buy:<br />
 * type following command :
 
 * <pre><code>git clone https://github.com/tmgithub/Rhasspy_Robot_Control.git</pre></code>
+* <pre><code>mv Rhasspy_Robot_Control/ intent</pre></code>
  
-* cd into the new folder
+* cd into the new folder intent
 
 * <pre><code>cd /usr/local/intent. </pre></code>
    
