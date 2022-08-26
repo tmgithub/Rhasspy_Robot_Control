@@ -12,7 +12,7 @@
 * [Demo Videos](#Demo)
 
 ## General <a name="General"></a>
-    The project is under permanent development so this readme is only a snapshot
+    The project is under permanent development so this readme is only a snapshot12101
     
     This project controls servo motors of a roboter via offline voice control ( rhasspy ).
     It is divided into two parts.
@@ -94,6 +94,7 @@ Hardware to buy:<br />
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null</pre></code>
 * <pre><code>apt-get update</pre></code>
 * <pre><code>apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin</pre></code>
+* <pre><code>apt-get install mosquitto mosquitto-clients</pre></code>
 * <pre><code>docker run -d -p 12101:12101 --name rhasspy --restart unless-stopped -v "$HOME/.config/rhasspy/profiles:/profiles" -v "/etc/localtime:/etc/localtime:ro" --device /dev/snd:/dev/snd rhasspy/rhasspy --user-profiles /profiles --profile de</pre></code>
 **Now the rhasspy needs some configurations**<br />
 
