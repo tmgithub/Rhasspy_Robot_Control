@@ -32,8 +32,8 @@ def on_message(client, userdata, msg):
 def sprachausgabe(satz):
     print("hermes_sprachausgabe.py sprachausgabe(): ",satz)
 
-    syssentence = "/usr/bin/espeak-ng -d plughw:0,0 -v mb-de6 -k 20 -p 60 -s 140 -a 180 -w /tmp/soundout.wav " + satz
-    sysplay = "/usr/bin/aplay -q -D plughw:0,0 /tmp/soundout.wav"
+    syssentence = "/usr/bin/espeak-ng -d plughw:1,0 -v mb-de6 -k 20 -p 60 -s 140 -a 180 -w /tmp/soundout.wav " + satz
+    sysplay = "/usr/bin/aplay -q -D plughw:1,0 /tmp/soundout.wav"
 
     subprocess.run(syssentence,shell=True,stdout=subprocess.DEVNULL)
     subprocess.run(sysplay,shell=True,stdout=subprocess.DEVNULL)
