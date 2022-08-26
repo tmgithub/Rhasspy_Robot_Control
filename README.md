@@ -94,7 +94,14 @@ Hardware to buy:<br />
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null</pre></code>
 * <pre><code>apt-get update</pre></code>
 * <pre><code>apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin</pre></code>
-* <pre><code>apt-get install mosquitto mosquitto-clients</pre></code>
+* <pre><code>apt-get install mosquitto mosquitto-clients mlocate</pre></code>
+* <pre><code>cd /usr/local/intent</pre></code>
+* <pre><code>dpkg -i mbrola_3.3+dfsg-4~bpo10+1_armhf.deb</pre></code>
+* <pre><code>apt-get install espeak-ng mbrola-de6</pre></code>
+* <pre><code>mkdir /usr/local/tmp</pre></code>
+* <pre><code>mkdir /usr/local/tmp</pre></code>
+
+
 * <pre><code>docker run -d -p 12101:12101 --name rhasspy --restart unless-stopped -v "$HOME/.config/rhasspy/profiles:/profiles" -v "/etc/localtime:/etc/localtime:ro" --device /dev/snd:/dev/snd rhasspy/rhasspy --user-profiles /profiles --profile de</pre></code>
 **Now the rhasspy needs some configurations**<br />
 
@@ -117,6 +124,9 @@ Hardware to buy:<br />
 * <pre><code>pip3 install paho-mqtt</pre></code> 
 * install the connection to GPIO of the Raspberry
 * <pre><code>pip3 install gpiozero</pre></code>
+* <pre><code>pip3 install pixel_ring</pre></code>
+* <pre><code>pip3 install rhasspy-hermes</pre></code>
+* <pre><code>pip3 install Adafruit_PCA9685</pre></code>
 
 
 **6.** Program as a service start at boottime : <br />
